@@ -1,0 +1,66 @@
+/* =============================================================================
+  Global
+============================================================================= */
+* {
+  @include box-sizing;
+}
+
+body,
+html {
+  font: $FONT_STACK;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.25em;
+  margin: .5em 0;
+}
+
+h2 {
+  @extend h1;
+  font-size: 1.75rem;
+}
+
+h3 {
+  @extend h1;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h4 {
+  @extend h1;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.--max-width {
+  margin: 0 auto;
+  max-width: $MAX_WIDTH;
+}
+
+.--padding {
+  padding: $BUFFER;
+}
+
+ng-md-icon svg {
+  vertical-align: middle
+}
