@@ -28,7 +28,7 @@ html {
 h1, h2, h3, h4 {
   font-size: 2rem;
   font-weight: 400;
-  line-height: 1.25em;
+  line-height: 1em;
   margin: .5em 0; }
 
 h2 {
@@ -43,19 +43,31 @@ h4 {
   font-weight: 600;
   margin: 1rem 0; }
 
-.--max-width {
-  margin: 0 auto;
-  max-width: 960px; }
-
-.--padding {
-  padding: 25px; }
+ng-view {
+  min-height: 100%; }
 
 ng-md-icon svg {
   vertical-align: middle; }
 
 /* =============================================================================
+  Intro tpl
+============================================================================= */
+.intro {
+  background: #b9f6ca;
+  color: #5d4037; }
+
+.intro__main-content {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 25px; }
+
+/* =============================================================================
   Toolbar
 ============================================================================= */
+.toolbar {
+  min-height: 75px;
+  padding: 0 25px; }
+
 .toolbar__title {
   margin: 0; }
 

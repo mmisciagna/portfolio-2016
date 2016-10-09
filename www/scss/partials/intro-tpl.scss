@@ -1,11 +1,13 @@
 /* =============================================================================
-  Toolbar
+  Intro tpl
 ============================================================================= */
-.toolbar {
-  min-height: 75px;
-  padding: 0 $BUFFER;
+.intro {
+  background: $PRIMARY;
+  color: $ACCENT;
 }
 
-.toolbar__title {
-  margin: 0;
+.intro__main-content {
+  margin: 0 auto;
+  max-width: $MAX_WIDTH;
+  padding: $BUFFER;
 }
