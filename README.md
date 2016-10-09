@@ -1,2 +1,2 @@
 # portfolio-2016
-My portfolio.
+My portfolio
