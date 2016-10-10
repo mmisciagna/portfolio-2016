@@ -3,14 +3,17 @@
 ============================================================================= */
 .intro {
   background-image: url(/imgs/bg-pattern-green-A100.jpg);
+  color: $BROWN_500;
 }
 
-.intro__main-content {
+.intro-content {
+  margin: 0 auto;
+  max-width: $MAX_WIDTH;
   padding: $BUFFER * 2 $BUFFER;
   width: 100%;
 }
 
-.intro__blurb {
+.intro-content-blurb {
   line-height: 1.5em;
   margin-top: 0;
 
@@ -24,20 +27,20 @@
   }
 }
 
-.intro__list {
+.intro-content-list {
   padding: 0;
 }
 
-.intro__list-item {
+.intro-content-list-item {
   border-bottom: 1px solid $WHITE;
   text-align: left;
+
+  &:first-child {
+    border-top: 1px solid $WHITE;
+  }
 }
 
-.intro__list-item:first-child {
-  border-top: 1px solid $WHITE;
-}
-
-.intro__button {
+.intro-content-list-item-button {
   border-radius: 0;
   display: block;
   font-size: 1rem;

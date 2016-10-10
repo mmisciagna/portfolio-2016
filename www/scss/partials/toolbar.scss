@@ -4,8 +4,10 @@
 .toolbar {
   min-height: 75px;
   padding: 0 $BUFFER;
+  @include box-shadow;
 }
 
 .toolbar__title {
+  color: $BROWN_500;
   margin: 0;
 }

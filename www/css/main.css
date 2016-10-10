@@ -60,62 +60,51 @@ ng-view {
 ng-md-icon svg {
   vertical-align: middle; }
 
-md-content {
-  background: none; }
-
 .main-content {
-  background-image: url(/imgs/bg-pattern-grey-100.jpg); }
+  background-image: url(/imgs/bg-pattern-grey-100.jpg);
+  padding: 25px 25px 50px; }
 
-.--box-shadow {
-  -moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
-  -ms-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15); }
-
-.--max-width {
+md-content {
+  background: none;
   margin: 0 auto;
   max-width: 850px; }
-
-.--padding {
-  padding: 25px; }
-
-.--text-color-accent {
-  color: #5d4037; }
 
 /* =============================================================================
   Intro tpl
 ============================================================================= */
 .intro {
-  background-image: url(/imgs/bg-pattern-green-A100.jpg); }
+  background-image: url(/imgs/bg-pattern-green-A100.jpg);
+  color: #5d4037; }
 
-.intro__main-content {
+.intro-content {
+  margin: 0 auto;
+  max-width: 850px;
   padding: 50px 25px;
   width: 100%; }
 
-.intro__blurb {
+.intro-content-blurb {
   line-height: 1.5em;
   margin-top: 0; }
-  .intro__blurb a {
+  .intro-content-blurb a {
     border-bottom-width: 3px;
     -moz-transition: all 0.3s ease-out;
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out; }
-    .intro__blurb a:hover {
+    .intro-content-blurb a:hover {
       color: rgba(0, 0, 0, 0.87); }
 
-.intro__list {
+.intro-content-list {
   padding: 0; }
 
-.intro__list-item {
+.intro-content-list-item {
   border-bottom: 1px solid #fff;
   text-align: left; }
+  .intro-content-list-item:first-child {
+    border-top: 1px solid #fff; }
 
-.intro__list-item:first-child {
-  border-top: 1px solid #fff; }
-
-.intro__button {
+.intro-content-list-item-button {
   border-radius: 0;
   display: block;
   font-size: 1rem;
@@ -130,7 +119,7 @@ md-content {
   -o-transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out; }
-  .intro__button:hover {
+  .intro-content-list-item-button:hover {
     background: none !important;
     padding-left: 10px; }
 
@@ -139,9 +128,14 @@ md-content {
 ============================================================================= */
 .toolbar {
   min-height: 75px;
-  padding: 0 25px; }
+  padding: 0 25px;
+  -moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15); }
 
 .toolbar__title {
+  color: #5d4037;
   margin: 0; }
 
 /*# sourceMappingURL=main.css.map */

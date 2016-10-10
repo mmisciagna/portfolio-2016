@@ -68,10 +68,13 @@ ng-md-icon svg {
   vertical-align: middle
 }
 
-md-content {
-  background: none;
-}
-
 .main-content {
   background-image: url(/imgs/bg-pattern-grey-100.jpg);
+  padding: $BUFFER $BUFFER $BUFFER * 2
+}
+
+md-content {
+  background: none;
+  margin: 0 auto;
+  max-width: $MAX_WIDTH;
 }
