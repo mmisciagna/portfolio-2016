@@ -15,17 +15,6 @@ html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
 
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table; }
-
-.clearfix:after {
-  clear: both; }
-
-.clearfix {
-  *zoom: 1; }
-
 a {
   border-bottom: 2px solid;
   color: inherit;
@@ -60,14 +49,14 @@ ng-view {
 ng-md-icon svg {
   vertical-align: middle; }
 
-.main-content {
-  background-image: url(/imgs/bg-pattern-grey-100.jpg);
-  padding: 25px 25px 50px; }
-
 md-content {
   background: none;
   margin: 0 auto;
   max-width: 850px; }
+
+.main-content {
+  background-image: url(/imgs/bg-pattern-grey-100.jpg);
+  padding: 25px 25px 50px; }
 
 /* =============================================================================
   Intro tpl
@@ -113,6 +102,7 @@ md-content {
   margin: 6px 0;
   padding: 0;
   text-align: left;
+  text-transform: none;
   width: 100%;
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;

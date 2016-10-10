@@ -14,20 +14,6 @@ html {
   text-rendering: optimizeLegibility;
 }
 
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.clearfix {
-  *zoom: 1;
-}
-
 a {
   border-bottom: 2px solid;
   color: inherit;
@@ -68,13 +54,13 @@ ng-md-icon svg {
   vertical-align: middle
 }
 
-.main-content {
-  background-image: url(/imgs/bg-pattern-grey-100.jpg);
-  padding: $BUFFER $BUFFER $BUFFER * 2
-}
-
 md-content {
   background: none;
   margin: 0 auto;
   max-width: $MAX_WIDTH;
+}
+
+.main-content {
+  background-image: url(/imgs/bg-pattern-grey-100.jpg);
+  padding: $BUFFER $BUFFER $BUFFER * 2
 }
