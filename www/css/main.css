@@ -52,11 +52,11 @@ ng-md-icon svg {
 md-content {
   background: none;
   margin: 0 auto;
-  max-width: 850px; }
+  max-width: 850px;
+  padding: 25px 25px 50px; }
 
 .main-content {
-  background-image: url(/imgs/bg-pattern-grey-100.jpg);
-  padding: 25px 25px 50px; }
+  background-image: url(/imgs/bg-pattern-grey-100.jpg); }
 
 /* =============================================================================
   Intro tpl

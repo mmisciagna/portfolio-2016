@@ -58,9 +58,9 @@ md-content {
   background: none;
   margin: 0 auto;
   max-width: $MAX_WIDTH;
+  padding: $BUFFER $BUFFER $BUFFER * 2
 }
 
 .main-content {
   background-image: url(/imgs/bg-pattern-grey-100.jpg);
-  padding: $BUFFER $BUFFER $BUFFER * 2
 }
