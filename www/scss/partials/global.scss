@@ -7,6 +7,7 @@
 
 body,
 html {
+  background: $GREY_100;
   font: $FONT_STACK;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -27,6 +28,13 @@ html {
   *zoom: 1;
 }
 
+a {
+  border-bottom: 2px solid;
+  color: inherit;
+  text-decoration: none;
+  @include transition;
+}
+
 h1 {
   font-size: 2rem;
   font-weight: 400;
@@ -41,13 +49,13 @@ h2 {
 
 h3 {
   @extend h1;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
 h4 {
   @extend h1;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   margin: 1rem 0;
 }
@@ -58,4 +66,12 @@ ng-view {
 
 ng-md-icon svg {
   vertical-align: middle
+}
+
+md-content {
+  background: none;
+}
+
+.main-content {
+  background-image: url(/imgs/bg-pattern-grey-100.jpg);
 }

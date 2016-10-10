@@ -2,12 +2,55 @@
   Intro tpl
 ============================================================================= */
 .intro {
-  background: $PRIMARY;
-  color: $ACCENT;
+  background-image: url(/imgs/bg-pattern-green-A100.jpg);
 }
 
 .intro__main-content {
-  margin: 0 auto;
-  max-width: $MAX_WIDTH;
-  padding: $BUFFER;
+  padding: $BUFFER * 2 $BUFFER;
+  width: 100%;
+}
+
+.intro__blurb {
+  line-height: 1.5em;
+  margin-top: 0;
+
+  a {
+    border-bottom-width: 3px;
+    @include transition;
+
+    &:hover {
+      color: $DEFAULT_FONT_COLOR;
+    }
+  }
+}
+
+.intro__list {
+  padding: 0;
+}
+
+.intro__list-item {
+  border-bottom: 1px solid $WHITE;
+  text-align: left;
+}
+
+.intro__list-item:first-child {
+  border-top: 1px solid $WHITE;
+}
+
+.intro__button {
+  border-radius: 0;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 6px 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  @include transition;
+
+  &:hover {
+    background: none !important;
+    padding-left: 10px;
+  }
 }

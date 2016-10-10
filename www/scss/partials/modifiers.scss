@@ -1,0 +1,16 @@
+.--box-shadow {
+  @include box-shadow;
+}
+
+.--max-width {
+  margin: 0 auto;
+  max-width: $MAX_WIDTH;
+}
+
+.--padding {
+  padding: $BUFFER;
+}
+
+.--text-color-accent {
+  color: $BROWN_500;
+}

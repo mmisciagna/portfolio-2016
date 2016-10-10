@@ -17,7 +17,7 @@ app.config(function($mdThemingProvider, $routeProvider) {
       .primaryPalette('green', {'default': 'A100'})
       .accentPalette('brown', {'default': '500'});
 
-  // Configures the router.
+  // Configures Angular router.
   $routeProvider.when('/', {
     redirectTo: '/intro'
   }).when('/intro', {
