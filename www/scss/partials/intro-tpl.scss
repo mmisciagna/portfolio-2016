@@ -6,14 +6,14 @@
   color: $BROWN_500;
 }
 
-.intro-content {
+.intro__content {
   margin: 0 auto;
   max-width: $MAX_WIDTH;
   padding: $BUFFER * 2 $BUFFER;
   width: 100%;
 }
 
-.intro-content-blurb {
+.intro__blurb {
   line-height: 1.5em;
   margin-top: 0;
 
@@ -27,11 +27,11 @@
   }
 }
 
-.intro-content-list {
+.intro__list {
   padding: 0;
 }
 
-.intro-content-list-item {
+.intro__list-item {
   border-bottom: 1px solid $WHITE;
   text-align: left;
 
@@ -40,7 +40,7 @@
   }
 }
 
-.intro-content-list-item-button {
+.intro__button {
   border-radius: 0;
   display: block;
   font-size: 1rem;

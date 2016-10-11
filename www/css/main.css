@@ -55,7 +55,7 @@ md-content {
   max-width: 850px;
   padding: 25px 25px 50px; }
 
-.main-content {
+.main__content {
   background-image: url(/imgs/bg-pattern-grey-100.jpg); }
 
 /* =============================================================================
@@ -65,35 +65,35 @@ md-content {
   background-image: url(/imgs/bg-pattern-green-A100.jpg);
   color: #5d4037; }
 
-.intro-content {
+.intro__content {
   margin: 0 auto;
   max-width: 850px;
   padding: 50px 25px;
   width: 100%; }
 
-.intro-content-blurb {
+.intro__blurb {
   line-height: 1.5em;
   margin-top: 0; }
-  .intro-content-blurb a {
+  .intro__blurb a {
     border-bottom-width: 3px;
     -moz-transition: all 0.3s ease-out;
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out; }
-    .intro-content-blurb a:hover {
+    .intro__blurb a:hover {
       color: rgba(0, 0, 0, 0.87); }
 
-.intro-content-list {
+.intro__list {
   padding: 0; }
 
-.intro-content-list-item {
+.intro__list-item {
   border-bottom: 1px solid #fff;
   text-align: left; }
-  .intro-content-list-item:first-child {
+  .intro__list-item:first-child {
     border-top: 1px solid #fff; }
 
-.intro-content-list-item-button {
+.intro__button {
   border-radius: 0;
   display: block;
   font-size: 1rem;
@@ -109,7 +109,7 @@ md-content {
   -o-transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out; }
-  .intro-content-list-item-button:hover {
+  .intro__button:hover {
     background: none !important;
     padding-left: 10px; }
 
@@ -124,7 +124,7 @@ md-content {
   -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15); }
 
-.toolbar-title {
+.toolbar__title {
   color: #5d4037;
   margin: 0; }
 
