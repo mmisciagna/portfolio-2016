@@ -59,6 +59,13 @@ md-content {
   background-image: url(/imgs/bg-pattern-grey-100.jpg); }
 
 /* =============================================================================
+  Media query - mobile
+============================================================================= */
+@media only screen and (max-width: 640px) {
+  body,
+  html {
+    font-size: 13px; } }
+/* =============================================================================
   Intro tpl
 ============================================================================= */
 .intro {
@@ -74,6 +81,8 @@ md-content {
   line-height: 1.5em;
   margin-bottom: 1em;
   margin-top: 0; }
+  .intro__blurb span {
+    white-space: nowrap; }
   .intro__blurb a {
     border-bottom: 3px solid #fff;
     -moz-transition: border-color 0.3s ease-out;
@@ -117,13 +126,6 @@ md-content {
   .intro__button .md-ripple-container {
     border-radius: 0; }
 
-/* =============================================================================
-  Media query - mobile
-============================================================================= */
-@media only screen and (max-width: 480px) {
-  .intro__blurb {
-    font-size: 1.25rem;
-    margin-bottom: 2em; } }
 /* =============================================================================
   Toolbar
 ============================================================================= */

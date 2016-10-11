@@ -64,3 +64,13 @@ md-content {
 .main__content {
   background-image: url(/imgs/bg-pattern-grey-100.jpg);
 }
+
+/* =============================================================================
+  Media query - mobile
+============================================================================= */
+@media only screen and (max-width: 640px) {
+  body,
+  html {
+    font-size: $MOBILE_FONT_SIZE;
+  }
+}

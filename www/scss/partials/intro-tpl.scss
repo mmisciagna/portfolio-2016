@@ -17,6 +17,10 @@
   margin-bottom: 1em;
   margin-top: 0;
 
+  span {
+    white-space: nowrap;
+  }
+
   a {
     border-bottom: 3px solid $WHITE;
     @include transition(border-color .3s ease-out);
@@ -62,15 +66,5 @@
 
   .md-ripple-container {
     border-radius: 0;
-  }
-}
-
-/* =============================================================================
-  Media query - mobile
-============================================================================= */
-@media only screen and (max-width: 480px) {
-  .intro__blurb {
-    font-size: 1.25rem;
-    margin-bottom: 2em;
   }
 }
