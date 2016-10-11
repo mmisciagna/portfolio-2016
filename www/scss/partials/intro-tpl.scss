@@ -3,7 +3,6 @@
 ============================================================================= */
 .intro {
   background-image: url(/imgs/bg-pattern-green-A100.jpg);
-  color: $BROWN_500;
 }
 
 .intro__content {
@@ -15,14 +14,15 @@
 
 .intro__blurb {
   line-height: 1.5em;
+  margin-bottom: 1em;
   margin-top: 0;
 
   a {
-    border-bottom-width: 3px;
-    @include transition;
+    border-bottom: 3px solid $WHITE;
+    @include transition(border-color .3s ease-out);
 
     &:hover {
-      color: $DEFAULT_FONT_COLOR;
+      border-color: $DEFAULT_FONT_COLOR;
     }
   }
 }
@@ -41,20 +41,36 @@
 }
 
 .intro__button {
+  background: $WHITE_25;
   border-radius: 0;
   display: block;
   font-size: 1rem;
   font-weight: 400;
-  letter-spacing: 1px;
-  margin: 6px 0;
+  letter-spacing: 0;
+  margin: 5px 0;
   padding: 0;
+  padding-left: $BUFFER / 2;
   text-align: left;
   text-transform: none;
   width: 100%;
-  @include transition;
+  @include transition(padding-left .5s ease-out);
 
   &:hover {
     background: none !important;
-    padding-left: 10px;
+    padding-left: $BUFFER;
+  }
+
+  .md-ripple-container {
+    border-radius: 0;
+  }
+}
+
+/* =============================================================================
+  Media query - mobile
+============================================================================= */
+@media only screen and (max-width: 480px) {
+  .intro__blurb {
+    font-size: 1.25rem;
+    margin-bottom: 2em;
   }
 }

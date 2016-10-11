@@ -62,8 +62,7 @@ md-content {
   Intro tpl
 ============================================================================= */
 .intro {
-  background-image: url(/imgs/bg-pattern-green-A100.jpg);
-  color: #5d4037; }
+  background-image: url(/imgs/bg-pattern-green-A100.jpg); }
 
 .intro__content {
   margin: 0 auto;
@@ -73,16 +72,17 @@ md-content {
 
 .intro__blurb {
   line-height: 1.5em;
+  margin-bottom: 1em;
   margin-top: 0; }
   .intro__blurb a {
-    border-bottom-width: 3px;
-    -moz-transition: all 0.3s ease-out;
-    -ms-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out; }
+    border-bottom: 3px solid #fff;
+    -moz-transition: border-color 0.3s ease-out;
+    -ms-transition: border-color 0.3s ease-out;
+    -o-transition: border-color 0.3s ease-out;
+    -webkit-transition: border-color 0.3s ease-out;
+    transition: border-color 0.3s ease-out; }
     .intro__blurb a:hover {
-      color: rgba(0, 0, 0, 0.87); }
+      border-color: rgba(0, 0, 0, 0.87); }
 
 .intro__list {
   padding: 0; }
@@ -94,25 +94,36 @@ md-content {
     border-top: 1px solid #fff; }
 
 .intro__button {
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 0;
   display: block;
   font-size: 1rem;
   font-weight: 400;
-  letter-spacing: 1px;
-  margin: 6px 0;
+  letter-spacing: 0;
+  margin: 5px 0;
   padding: 0;
+  padding-left: 12.5px;
   text-align: left;
   text-transform: none;
   width: 100%;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out; }
+  -moz-transition: padding-left 0.5s ease-out;
+  -ms-transition: padding-left 0.5s ease-out;
+  -o-transition: padding-left 0.5s ease-out;
+  -webkit-transition: padding-left 0.5s ease-out;
+  transition: padding-left 0.5s ease-out; }
   .intro__button:hover {
     background: none !important;
-    padding-left: 10px; }
+    padding-left: 25px; }
+  .intro__button .md-ripple-container {
+    border-radius: 0; }
 
+/* =============================================================================
+  Media query - mobile
+============================================================================= */
+@media only screen and (max-width: 480px) {
+  .intro__blurb {
+    font-size: 1.25rem;
+    margin-bottom: 2em; } }
 /* =============================================================================
   Toolbar
 ============================================================================= */
@@ -125,7 +136,6 @@ md-content {
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15); }
 
 .toolbar__title {
-  color: #5d4037;
   margin: 0; }
 
 /*# sourceMappingURL=main.css.map */
