@@ -26,7 +26,7 @@
     @include transition(border-color .3s ease-out);
 
     &:hover {
-      border-color: $DEFAULT_FONT_COLOR;
+      border-color: $FONT_COLOR;
     }
   }
 }
@@ -37,27 +37,32 @@
 
 .intro__list-item {
   border-bottom: 1px solid $WHITE;
+  min-height: 0;
   text-align: left;
 
   &:first-child {
     border-top: 1px solid $WHITE;
   }
+
+  &:before {
+    min-height: 0;
+  }
 }
 
 .intro__button {
-  background: $WHITE_25;
+  background: $WHITE_T25;
   border-radius: 0;
   display: block;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0;
-  margin: 5px 0;
+  margin: 2px 0;
   padding: 0;
   padding-left: $BUFFER / 2;
   text-align: left;
   text-transform: none;
   width: 100%;
-  @include transition(padding-left .5s ease-out);
+  @include transition(all .5s ease-out);
 
   &:hover {
     background: none !important;
