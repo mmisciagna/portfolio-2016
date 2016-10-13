@@ -9,8 +9,8 @@
 
 body,
 html {
-  background: #f5f5f5;
-  font: 400 17px/1.7em "Source Serif Pro", Georgia, serif;
+  background: #F5F5F5;
+  font: 400 17px/1.7em "Source Sans Pro", Arial, sans-serif;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
@@ -69,7 +69,7 @@ md-content {
   Intro tpl
 ============================================================================= */
 .intro {
-  background-image: url(/imgs/bg-pattern-green-A100.jpg); }
+  background: #37474F; }
 
 .intro__content {
   margin: 0 auto;
@@ -78,13 +78,14 @@ md-content {
   width: 100%; }
 
 .intro__blurb {
+  color: rgba(255, 255, 255, 0.87);
   line-height: 1.5em;
   margin-bottom: 1em;
   margin-top: 0; }
   .intro__blurb span {
     white-space: nowrap; }
   .intro__blurb a {
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid #FFFF00;
     -moz-transition: border-color 0.3s ease-out;
     -ms-transition: border-color 0.3s ease-out;
     -o-transition: border-color 0.3s ease-out;
@@ -97,18 +98,35 @@ md-content {
   padding: 0; }
 
 .intro__list-item {
-  border-bottom: 1px solid #fff;
   min-height: 0;
-  text-align: left; }
-  .intro__list-item:first-child {
-    border-top: 1px solid #fff; }
-  .intro__list-item:before {
-    min-height: 0; }
+  position: relative; }
+  .intro__list-item:after, .intro__list-item:first-child:before {
+    background: rgba(0, 0, 0, 0.87);
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 3%;
+    min-height: 0;
+    position: absolute;
+    visibility: visible;
+    width: 20%; }
+  .intro__list-item:first-child:before {
+    bottom: auto;
+    left: 1%;
+    top: 0;
+    width: 40%; }
+  .intro__list-item:nth-child(2):after, .intro__list-item:nth-child(2):first-child:before {
+    left: 0%;
+    width: 30%; }
+  .intro__list-item:nth-child(3):after, .intro__list-item:nth-child(3):first-child:before {
+    left: 2%;
+    width: 15%; }
 
 .intro__button {
-  background: rgba(255, 255, 255, 0.25);
+  background: none !important;
   border-radius: 0;
-  display: block;
+  color: #FFFF00;
+  display: inline-block;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0;
@@ -116,15 +134,13 @@ md-content {
   padding: 0;
   padding-left: 12.5px;
   text-align: left;
-  text-transform: none;
-  width: 100%;
+  width: 40%;
   -moz-transition: all 0.5s ease-out;
   -ms-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out; }
   .intro__button:hover {
-    background: none !important;
     padding-left: 25px; }
   .intro__button .md-ripple-container {
     border-radius: 0; }

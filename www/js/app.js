@@ -14,8 +14,8 @@ var app = angular.module('MyPortfolio', [
 app.config(function($mdThemingProvider, $routeProvider) {
   // Configures Angular Material theme.
   $mdThemingProvider.theme('default')
-      .primaryPalette('green', {'default': 'A100'})
-      .accentPalette('brown', {'default': '500'});
+      .primaryPalette('blue-grey', {'default': '700'})
+      .accentPalette('yellow', {'default': 'A200'});
 
   // Configures Angular router.
   $routeProvider.when('/', {

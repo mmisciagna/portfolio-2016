@@ -2,7 +2,8 @@
   Intro tpl
 ============================================================================= */
 .intro {
-  background-image: url(/imgs/bg-pattern-green-A100.jpg);
+  // background-image: url(/imgs/bg-pattern-green-A100.jpg);
+  background: $PRIMARY;
 }
 
 .intro__content {
@@ -13,6 +14,7 @@
 }
 
 .intro__blurb {
+  color: $WHITE_T87;
   line-height: 1.5em;
   margin-bottom: 1em;
   margin-top: 0;
@@ -22,7 +24,7 @@
   }
 
   a {
-    border-bottom: 3px solid $WHITE;
+    border-bottom: 3px solid $ACCENT;
     @include transition(border-color .3s ease-out);
 
     &:hover {
@@ -36,23 +38,45 @@
 }
 
 .intro__list-item {
-  border-bottom: 1px solid $WHITE;
   min-height: 0;
-  text-align: left;
+  position: relative;
 
-  &:first-child {
-    border-top: 1px solid $WHITE;
+  &:after {
+    background: $FONT_COLOR;
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 3%;
+    min-height: 0;
+    position: absolute;
+    visibility: visible;
+    width: 20%;
   }
 
-  &:before {
-    min-height: 0;
+  &:first-child:before {
+    @extend .intro__list-item:after;
+    bottom: auto;
+    left: 1%;
+    top: 0;
+    width: 40%;
+  }
+
+  &:nth-child(2):after {
+    left: 0%;
+    width: 30%;
+  }
+
+  &:nth-child(3):after {
+    left: 2%;
+    width: 15%;
   }
 }
 
 .intro__button {
-  background: $WHITE_T25;
+  background: none !important;
   border-radius: 0;
-  display: block;
+  color: $ACCENT;
+  display: inline-block;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0;
@@ -60,12 +84,10 @@
   padding: 0;
   padding-left: $BUFFER / 2;
   text-align: left;
-  text-transform: none;
-  width: 100%;
+  width: 40%;
   @include transition(all .5s ease-out);
 
   &:hover {
-    background: none !important;
     padding-left: $BUFFER;
   }
 
