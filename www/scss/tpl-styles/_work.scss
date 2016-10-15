@@ -1,0 +1,14 @@
+/* =============================================================================
+  Work tpl
+============================================================================= */
+.work {
+  background-image: url(/imgs/bg-pattern-grey-100.jpg);
+}
+
+.work__content {
+  margin: 0 auto;
+  max-width: $MAX_WIDTH;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: $BUFFER $BUFFER $BUFFER * 2
+}

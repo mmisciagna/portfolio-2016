@@ -1,12 +1,12 @@
 /* =============================================================================
-  Toolbar
+  Nav
 ============================================================================= */
-.toolbar {
-  min-height: 75px;
-  padding: 0 $BUFFER;
-  @include box-shadow;
-}
+.nav {
+  background: $PRIMARY;
+  padding: $BUFFER;
+  width: 250px;
 
-.toolbar__title {
-  margin: 0;
+  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+    width: 100%;
+  }
 }

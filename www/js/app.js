@@ -9,15 +9,15 @@ var app = angular.module('MyPortfolio', [
 
 
 /**
- * Sets the Material theme and router.
+ * Configures MyPortfolio module.
  */
 app.config(function($mdThemingProvider, $routeProvider) {
-  // Configures Angular Material theme.
+  // Angular Material theme provider.
   $mdThemingProvider.theme('default')
       .primaryPalette('blue-grey', {'default': '700'})
       .accentPalette('yellow', {'default': 'A200'});
 
-  // Configures Angular router.
+  // Angular router provider.
   $routeProvider.when('/', {
     redirectTo: '/intro'
   }).when('/intro', {

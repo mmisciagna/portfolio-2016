@@ -2,7 +2,6 @@
   Intro tpl
 ============================================================================= */
 .intro {
-  // background-image: url(/imgs/bg-pattern-green-A100.jpg);
   background: $PRIMARY;
 }
 
@@ -14,8 +13,7 @@
 }
 
 .intro__blurb {
-  color: $WHITE_T87;
-  line-height: 1.5em;
+  color: $REVERSE_FONT_COLOR;
   margin-bottom: 1em;
   margin-top: 0;
 
@@ -25,50 +23,34 @@
 
   a {
     border-bottom: 3px solid $ACCENT;
+    padding-bottom: 2px;
     @include transition(border-color .3s ease-out);
 
     &:hover {
-      border-color: $FONT_COLOR;
+      border-color: $BLACK_T87;
     }
+  }
+
+  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+    line-height: 1.5em;
   }
 }
 
-.intro__list {
+.intro__nav {
   padding: 0;
 }
 
-.intro__list-item {
+.intro__nav-item {
+  border-bottom: 1px solid $BLACK_T87;
   min-height: 0;
   position: relative;
 
-  &:after {
-    background: $FONT_COLOR;
-    bottom: 0;
-    content: '';
-    height: 1px;
-    left: 3%;
-    min-height: 0;
-    position: absolute;
-    visibility: visible;
-    width: 20%;
+  &:first-child {
+    border-top: 1px solid $BLACK_T87;
   }
 
-  &:first-child:before {
-    @extend .intro__list-item:after;
-    bottom: auto;
-    left: 1%;
-    top: 0;
-    width: 40%;
-  }
-
-  &:nth-child(2):after {
-    left: 0%;
-    width: 30%;
-  }
-
-  &:nth-child(3):after {
-    left: 2%;
-    width: 15%;
+  &:before {
+    display: none;
   }
 }
 
@@ -80,11 +62,12 @@
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0;
-  margin: 2px 0;
+  line-height: $BUFFER * 2;
+  margin: 0;
   padding: 0;
   padding-left: $BUFFER / 2;
   text-align: left;
-  width: 40%;
+  width: 100%;
   @include transition(all .5s ease-out);
 
   &:hover {
