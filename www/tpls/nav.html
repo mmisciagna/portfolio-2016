@@ -1,19 +1,16 @@
 <div class="nav-offset"></div>
-<div class="nav" ng-controller="NavCtrl as nav">
+<div class="nav">
   <h1 class="nav__title">
     <a href="#/intro">Michael<br>Misciagna</a>
   </h1>
-  <button
-      class="nav__menu-button"
-      ng-init="nav.expand = false"
-      ng-click="nav.expand = !nav.expand">
+  <button class="nav__menu-button" ng-click="nav.expanded = !nav.expanded">
     <ng-md-icon class="nav__menu-icon" icon="menu" size="26"></ng-md-icon> 
   </button>
-  <div class="nav__menu" ng-class="{'nav__menu--expanded': nav.expand}" nav-menu>
+  <div class="nav__menu" ng-class="{'nav__menu--expanded': nav.expanded}" nav-menu>
     <div class="nav__close">
        <button
           class="nav__close-button"
-          ng-click="nav.expand = !nav.expand">
+          ng-click="nav.expanded = !nav.expanded">
         <ng-md-icon class="nav__close-icon" icon="close" size="26"></ng-md-icon> 
       </button>
     </div>

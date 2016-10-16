@@ -9,7 +9,7 @@ navDir.directive('navigation', function() {
     restrict: 'E',
     scope: {},
     templateUrl: '../tpls/nav.html',
-    controller: 'NavCtrl'
+    controller: 'NavCtrl as nav'
   };
 });
 
@@ -18,14 +18,13 @@ navDir.directive('navigation', function() {
 navDir.directive('navMenu', function($window) {
   return {
     restrict: 'A',
-    scope: {},
     link: function(scope, element) {
       $window.addEventListener('resize', function() {
         var navMenu = element[0];
 
-        if ($window.innerWidth >= 768 &&
-            navMenu.classList.contains('nav__menu--expanded')) {
-          navMenu.classList.remove('nav__menu--expanded')
+        if ($window.innerWidth >= 768 && scope.nav.expanded) {
+          scope.nav.expanded = false;
+          scope.$apply();
         }
       });
     }

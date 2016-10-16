@@ -11,4 +11,7 @@ navCtrl.controller('NavCtrl', function(NavModel) {
   this.active = function(route) {
     return window.location.hash == route;
   };
+
+  // Whether the mobile nav menu is expanded.
+  this.expanded = false;
 });
