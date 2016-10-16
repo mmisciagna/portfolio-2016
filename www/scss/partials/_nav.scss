@@ -3,10 +3,32 @@
 ============================================================================= */
 .nav {
   background: $PRIMARY;
+  color: $WHITE_T87;
+  height: 100%;
+  left: 0;
   padding: $BUFFER;
-  width: 250px;
+  position: fixed;
+  top: 0;
+  width: 200px;
+  @include flexbox(column);
+  @include flexbox-items(flex-start, center);
 
-  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+    height: $BUFFER * 3;
+    padding: 0 $BUFFER;
+    width: 100%;
+    @include flexbox(row);
+  }
+}
+
+.nav-offset {
+  max-width: 200px;
+  width: 200px;
+
+  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+    height: $BUFFER * 3;
+    max-height: 75px;
+    max-width: none;
     width: 100%;
   }
 }

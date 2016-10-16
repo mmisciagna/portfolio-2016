@@ -3,6 +3,9 @@
 ============================================================================= */
 .intro {
   background: $PRIMARY;
+  @include flexbox(column);
+  @include flexbox-items(center, center);
+  @include flex;
 }
 
 .intro__content {
@@ -13,7 +16,7 @@
 }
 
 .intro__blurb {
-  color: $REVERSE_FONT_COLOR;
+  color: $WHITE_T87;
   margin-bottom: 1em;
   margin-top: 0;
 
@@ -24,7 +27,6 @@
   a {
     border-bottom: 3px solid $ACCENT;
     padding-bottom: 2px;
-    @include transition(border-color .3s ease-out);
 
     &:hover {
       border-color: $BLACK_T87;
@@ -37,6 +39,7 @@
 }
 
 .intro__nav {
+  margin: 0;
   padding: 0;
 }
 
@@ -54,27 +57,15 @@
   }
 }
 
-.intro__button {
-  background: none !important;
-  border-radius: 0;
+.intro__link {
+  border-bottom: none;
   color: $ACCENT;
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0;
+  display: block;
   line-height: $BUFFER * 2;
-  margin: 0;
-  padding: 0;
   padding-left: $BUFFER / 2;
-  text-align: left;
-  width: 100%;
   @include transition(all .5s ease-out);
 
   &:hover {
     padding-left: $BUFFER;
-  }
-
-  .md-ripple-container {
-    border-radius: 0;
   }
 }

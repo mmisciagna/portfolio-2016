@@ -12,6 +12,37 @@
   box-sizing: border-box;
 }
 
+@mixin flex {
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+
+@mixin flexbox($dir: row) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: $dir;
+  -ms-flex-flow: $dir;
+  -moz-flex-flow: $dir;
+  -o-flex-flow: $dir;
+  flex-flow: $dir;
+}
+
+@mixin flexbox-items($hor: flex-start, $ver: flex-start) {
+  -webkit-justify-content: $hor;
+  -ms-justify-content: $hor;
+  -moz-justify-content: $hor;
+  -o-justify-content: $hor;
+  justify-content: $hor;
+  -webkit-align-items: $ver;
+  -ms-align-items: $ver;
+  -moz-align-items: $ver;
+  -o-align-items: $ver;
+  align-items: $ver;
+}
+
 @mixin transition($params: all .3s ease-out) {
   -moz-transition: $params;
   -ms-transition: $params;

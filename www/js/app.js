@@ -1,8 +1,7 @@
 /**
- * The main module for the Photo Space app.
+ * The main module for MyPortfolio.
  */
 var app = angular.module('MyPortfolio', [
-  'ngMaterial',
   'ngMdIcons',
   'ngRoute'
 ]);
@@ -11,13 +10,7 @@ var app = angular.module('MyPortfolio', [
 /**
  * Configures MyPortfolio module.
  */
-app.config(function($mdThemingProvider, $routeProvider) {
-  // Angular Material theme provider.
-  $mdThemingProvider.theme('default')
-      .primaryPalette('blue-grey', {'default': '700'})
-      .accentPalette('yellow', {'default': 'A200'});
-
-  // Angular router provider.
+app.config(function($routeProvider) {
   $routeProvider.when('/', {
     redirectTo: '/intro'
   }).when('/intro', {
