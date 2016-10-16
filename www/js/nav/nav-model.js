@@ -1,7 +1,7 @@
-var navModel = angular.module('nav.model', []);
+var nav = angular.module('nav.model', []);
 
-
-navModel.service('NavModel', function() {
+// Nav model constructor
+nav.Model = function() {
   this.navItems = [
     {
       'label': 'Intro',
@@ -20,8 +20,10 @@ navModel.service('NavModel', function() {
       'route': 'https://teams.googleplex.com/u/mmisciagna'
     }
   ];
+};
 
-  this.getNavItems = function() {
-    return this.navItems;
-  };
-});
+nav.Model.prototype.getNavItems = function() {
+  return this.navItems;
+};
+
+nav.service('NavModel', nav.Model);

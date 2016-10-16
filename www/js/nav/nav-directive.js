@@ -1,10 +1,9 @@
-var navDir = angular.module('nav.directive', [
+var nav = angular.module('nav.directive', [
   'nav.ctrl'
 ]);
 
-
-// Defines nav template on element.
-navDir.directive('navigation', function() {
+// Nav template
+nav.directive('navigation', function() {
   return {
     restrict: 'E',
     scope: {},
@@ -15,7 +14,7 @@ navDir.directive('navigation', function() {
 
 
 // Removes expanded class from nav menu on large screens
-navDir.directive('navMenu', function($window) {
+nav.directive('navMenu', function($window) {
   return {
     restrict: 'A',
     link: function(scope, element) {

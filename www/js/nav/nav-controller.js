@@ -1,17 +1,15 @@
-var navCtrl = angular.module('nav.ctrl', [
+var nav = angular.module('nav.ctrl', [
   'nav.model'
 ]);
 
-
-navCtrl.controller('NavCtrl', function(NavModel) {
-  // Nav items
+// Nav controller constructor
+nav.Ctrl = function(NavModel) {
   this.items = NavModel.getNavItems();
+};
 
-  // Sets the active nav.
-  this.active = function(route) {
-    return window.location.hash == route;
-  };
+// Sets active nav
+nav.Ctrl.prototype.active = function(route) {
+  return window.location.hash == route;
+};
 
-  // Whether the mobile nav menu is expanded.
-  this.expanded = false;
-});
+nav.controller('NavCtrl', nav.Ctrl);

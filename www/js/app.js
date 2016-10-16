@@ -4,7 +4,6 @@ var app = angular.module('MyPortfolio', [
   'nav.directive'
 ]);
 
-
 app.config(function($routeProvider) {
   $routeProvider.when('/', {
     redirectTo: '/intro'
@@ -19,7 +18,8 @@ app.config(function($routeProvider) {
   });
 });
 
-
-app.controller('MainCtrl', function() {
+app.Ctrl = function() {
   this.isTouchDevice = 'ontouchstart' in document.documentElement;
-});
+};
+
+app.controller('MainCtrl', app.Ctrl);
