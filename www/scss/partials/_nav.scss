@@ -7,9 +7,9 @@ $MOBILE-NAV-WIDTH: 100%;
 $MOBILE-NAV-HEIGHT: $BUFFER * 2;
 
 .nav-offset {
+  height: 100%;
   max-width: $DESKTOP-NAV-WIDTH;
   min-width: $DESKTOP-NAV-WIDTH;
-  @include flex;
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
     height: $MOBILE-NAV-HEIGHT;

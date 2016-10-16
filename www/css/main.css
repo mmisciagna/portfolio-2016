@@ -76,10 +76,9 @@ main[ng-view] {
   Nav
 ============================================================================= */
 .nav-offset {
+  height: 100%;
   max-width: 200px;
-  min-width: 200px;
-  -webkit-box-flex: 1;
-  flex: 1; }
+  min-width: 200px; }
   @media only screen and (max-width: 768px) {
     .nav-offset {
       height: 50px;

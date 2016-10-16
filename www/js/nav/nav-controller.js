@@ -4,8 +4,10 @@ var navCtrl = angular.module('nav.ctrl', [
 
 
 navCtrl.controller('NavCtrl', function(NavModel) {
+  // Nav items
   this.items = NavModel.getNavItems();
 
+  // Sets the active nav.
   this.active = function(route) {
     return window.location.hash == route;
   };
