@@ -1,10 +1,18 @@
 <div class="work">
   <div class="nav-offset"></div>
-  <div class="nav">
-    <a class="nav__item" href="#/index">Intro</a>
-    <a class="nav__item nav__item--active" href="#/work">Work</a>
-    <a class="nav__item" href="#/resume">Résumé</a>
-    <a class="nav__item" href="https://teams.googleplex.com/u/mmisciagna" target="_blank">Contact</a>
+  <div class="nav" ng-controller="NavCtrl as nav">
+    <h1 class="nav__title">
+      <a href="#/intro">Michael<br>Misciagna</a>
+    </h1>
+    <div class="nav__menu">
+      <a
+          ng-repeat="item in nav.items"
+          class="nav__item"
+          ng-class="{'nav__item--active': nav.active('{{item.route}}')}"
+          href="{{item.route}}">
+        {{item.label}}
+      </a>
+    </div>
   </div>
   <div class="work__content">
     <h2>Work</h2>

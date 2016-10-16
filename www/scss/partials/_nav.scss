@@ -23,19 +23,27 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   background: $WHITE_T87;
   height: $DESKTOP-NAV-HEIGHT;
   left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding: $BUFFER 0 $BUFFER * 2;
   position: fixed;
   top: 0;
   width: $DESKTOP-NAV-WIDTH;
   @include flexbox(column);
-  @include flexbox-items(flex-start, center);
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
     height: $MOBILE-NAV-HEIGHT;
     padding: 0;
     width: $MOBILE-NAV-WIDTH;
     @include flexbox(row);
-    @include flexbox-items(space-between, center);
+  }
+}
+
+.nav__title {
+  padding: 0 $BUFFER;
+
+  a {
+    border-bottom: none;
   }
 }
 
@@ -54,7 +62,6 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
 
 .nav__item--active {
   background: $ACCENT;
-  padding-left: $BUFFER + ($BUFFER / 2);
   pointer-events: none;
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
