@@ -1,17 +1,5 @@
 <div class="resume">
-  <div class="nav-offset"></div>
-  <div class="nav" ng-controller="NavCtrl as nav">
-    <h1 class="nav__title">
-      <a href="#/intro">Michael<br>Misciagna</a>
-    </h1>
-    <a
-        ng-repeat="item in nav.items"
-        class="nav__item"
-        ng-class="{'nav__item--active': nav.active('{{item.route}}')}"
-        href="{{item.route}}">
-      {{item.label}}
-    </a>
-  </div>
+  <navigation></navigation>
   <div class="resume__content">
     <h2>Resume</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <a href="#/work">reprehenderit</a> in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

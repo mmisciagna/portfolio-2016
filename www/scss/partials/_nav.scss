@@ -74,6 +74,10 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   }
 }
 
+.nav__close-button {
+  @extend .nav__menu-button;
+}
+
 .nav__close {
   border-bottom: 1px solid $DIVIDER;
   display: none;
@@ -87,6 +91,10 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   svg {
     vertical-align: middle;
   }
+}
+
+.nav__close-icon {
+  @extend .nav__menu-icon;
 }
 
 .nav__menu {

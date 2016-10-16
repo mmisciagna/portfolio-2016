@@ -1,9 +1,9 @@
-var nav = angular.module('nav', [
+var navCtrl = angular.module('nav.ctrl', [
   'nav.model'
 ]);
 
 
-nav.controller('NavCtrl', function(NavModel) {
+navCtrl.controller('NavCtrl', function(NavModel) {
   this.items = NavModel.getNavItems();
 
   this.active = function(route) {

@@ -1,7 +1,7 @@
 var app = angular.module('MyPortfolio', [
   'ngMdIcons',
   'ngRoute',
-  nav.name
+  'nav.directive'
 ]);
 
 

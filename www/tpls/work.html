@@ -1,33 +1,5 @@
 <div class="work">
-  <div class="nav-offset"></div>
-  <div class="nav" ng-controller="NavCtrl as nav">
-    <h1 class="nav__title">
-      <a href="#/intro">Michael<br>Misciagna</a>
-    </h1>
-    <button
-        class="nav__menu-button"
-        ng-init="nav.expand = false"
-        ng-click="nav.expand = !nav.expand">
-      <ng-md-icon class="nav__menu-icon" icon="menu" size="26"></ng-md-icon> 
-    </button>
-    <div class="nav__menu" ng-class="{'nav__menu--expanded': nav.expand}">
-      <div class="nav__close">
-         <button
-            class="nav__menu-button"
-            ng-init="nav.expand = false"
-            ng-click="nav.expand = !nav.expand">
-          <ng-md-icon class="nav__menu-icon" icon="close" size="26"></ng-md-icon> 
-        </button>
-      </div>
-      <a
-          ng-repeat="item in nav.items"
-          class="nav__item"
-          ng-class="{'nav__item--active': nav.active('{{item.route}}')}"
-          href="{{item.route}}">
-        {{item.label}}
-      </a>
-    </div>
-  </div>
+  <navigation></navigation>
   <div class="work__content">
     <h2>Work</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <a href="#/intro">reprehenderit</a> in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

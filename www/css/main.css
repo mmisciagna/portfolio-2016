@@ -135,7 +135,7 @@ main[ng-view] {
       .nav__title br {
         display: none; } }
 
-.nav__menu-button {
+.nav__menu-button, .nav__close-button {
   background: #FFFF00;
   border: none;
   cursor: pointer;
@@ -149,7 +149,7 @@ main[ng-view] {
   -webkit-appearance: none;
   appearance: none; }
   @media only screen and (max-width: 768px) {
-    .nav__menu-button {
+    .nav__menu-button, .nav__close-button {
       display: block; } }
 
 .nav__close {
@@ -159,7 +159,7 @@ main[ng-view] {
     .nav__close {
       display: block; } }
 
-.nav__menu-icon svg {
+.nav__menu-icon svg, .nav__close-icon svg {
   vertical-align: middle; }
 
 @media only screen and (max-width: 768px) {
