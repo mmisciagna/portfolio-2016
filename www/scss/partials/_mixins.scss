@@ -1,3 +1,9 @@
+@mixin remove-appearance {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 @mixin box-shadow($params: 1px 1px 3px 1px rgba(0, 0, 0, .15)) {
   -moz-box-shadow: $params;
   -ms-box-shadow: $params;
@@ -49,4 +55,10 @@
   -o-transition: $params;
   -webkit-transition: $params;
   transition: $params;
+}
+
+@mixin translate($x, $y) {
+  -ms-transform: translate($x, $y);
+  -webkit-transform: translate($x, $y);
+  transform: translate($x, $y);
 }

@@ -37,20 +37,31 @@ h1 {
 }
 
 h2 {
-  @extend h1;
   color: $PRIMARY;
   font-size: 1.75rem;
+  font-weight: 400;
   line-height: 1.25em;
+  margin: .5em 0;
+  padding-bottom: 8px;
+  position: relative;
+
+  &:after {
+    border-bottom: 3px solid;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    width: $BUFFER;
+  }
 }
 
 h3 {
   @extend h2;
   font-size: 1.25rem;
   font-weight: 600;
-  line-height: 1.25em;
 }
 
-[ng-view] {
+main[ng-view] {
   min-height: 100%;
   @include flexbox(column);
 }
