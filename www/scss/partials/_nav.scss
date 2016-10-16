@@ -4,7 +4,7 @@
 $DESKTOP-NAV-WIDTH: 200px;
 $DESKTOP-NAV-HEIGHT: 100%;
 $MOBILE-NAV-WIDTH: 100%;
-$MOBILE-NAV-HEIGHT: $BUFFER * 3;
+$MOBILE-NAV-HEIGHT: $BUFFER * 2;
 
 .nav-offset {
   max-width: $DESKTOP-NAV-WIDTH;
@@ -42,13 +42,12 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 3;
 .nav__item {
   border-bottom: none;
   display: block;
-  line-height: $BUFFER * 2;
+  line-height: $MOBILE-NAV-HEIGHT;
   padding: 0 $BUFFER;
   width: 100%;
   @include transition(padding-left .5s ease-out);
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    line-height: $MOBILE-NAV-HEIGHT;
     @include transition(background-color .5s ease-out);
   }
 }
