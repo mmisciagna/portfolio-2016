@@ -1,0 +1,25 @@
+/* =============================================================================
+  Hover states for no-touch devices
+============================================================================= */
+.no-touch {
+  a:hover {
+    border-color: $ACCENT;
+  }
+
+  .intro__blurb a:hover {
+    border-color: $BLACK_T87;
+  }
+
+  .intro__link:hover {
+    padding-left: $BUFFER;
+  }
+
+  .nav__item:hover {
+    padding-left: $BUFFER + ($BUFFER / 2);
+
+    @media only screen and (max-width: $TABLET_BREAKPOINT) {
+      background: $ACCENT;
+      padding-left: $BUFFER;
+    }
+  }
+}

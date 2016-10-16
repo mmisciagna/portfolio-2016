@@ -1,14 +1,14 @@
 /**
- * The main module for MyPortfolio.
+ * MyPortfolio module
  */
 var app = angular.module('MyPortfolio', [
-  'ngMdIcons',
+  // 'ngMdIcons',
   'ngRoute'
 ]);
 
 
 /**
- * Configures MyPortfolio module.
+ * Configures MyPortfolio module
  */
 app.config(function($routeProvider) {
   $routeProvider.when('/', {
@@ -20,4 +20,12 @@ app.config(function($routeProvider) {
   }).otherwise({
     redirectTo: '/intro'
   });
+});
+
+
+/**
+ * Constructor for MyPortfolio module
+ */
+app.controller('MainCtrl', function() {
+  this.isTouchDevice = 'ontouchstart' in document.documentElement;
 });

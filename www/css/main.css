@@ -11,26 +11,26 @@ body,
 html {
   background: #F5F5F5;
   color: #37474F;
-  font: 400 17px/1.7em "Source Sans Pro", Arial, sans-serif;
+  font: 400 17px/2em "Source Sans Pro", Arial, sans-serif;
+  height: 100%;
   margin: 0;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 640px) {
     body,
     html {
-      font-size: 15px; } }
+      font-size: 16px; } }
 
 a {
   border-bottom: 2px solid;
   color: inherit;
   text-decoration: none;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out; }
-  a:hover {
-    border-color: #FFFF00; }
+  -moz-transition: border-color 0.3s ease-out;
+  -ms-transition: border-color 0.3s ease-out;
+  -o-transition: border-color 0.3s ease-out;
+  -webkit-transition: border-color 0.3s ease-out;
+  transition: border-color 0.3s ease-out; }
 
 h1, h2, h3, h4 {
   font-size: 2rem;
@@ -66,12 +66,23 @@ h4 {
 /* =============================================================================
   Nav
 ============================================================================= */
+.nav-offset {
+  max-width: 200px;
+  min-width: 200px;
+  -webkit-box-flex: 1;
+  flex: 1; }
+  @media only screen and (max-width: 768px) {
+    .nav-offset {
+      height: 75px;
+      max-height: 75px;
+      max-width: none;
+      width: 100%; } }
+
 .nav {
-  background: #37474F;
-  color: rgba(255, 255, 255, 0.87);
+  background: rgba(255, 255, 255, 0.87);
   height: 100%;
   left: 0;
-  padding: 25px;
+  padding: 25px 0 50px;
   position: fixed;
   top: 0;
   width: 200px;
@@ -98,7 +109,7 @@ h4 {
   @media only screen and (max-width: 768px) {
     .nav {
       height: 75px;
-      padding: 0 25px;
+      padding: 0;
       width: 100%;
       display: -webkit-box;
       display: -moz-box;
@@ -109,17 +120,45 @@ h4 {
       -ms-flex-flow: row;
       -moz-flex-flow: row;
       -o-flex-flow: row;
-      flex-flow: row; } }
+      flex-flow: row;
+      -webkit-justify-content: space-between;
+      -ms-justify-content: space-between;
+      -moz-justify-content: space-between;
+      -o-justify-content: space-between;
+      justify-content: space-between;
+      -webkit-align-items: center;
+      -ms-align-items: center;
+      -moz-align-items: center;
+      -o-align-items: center;
+      align-items: center; } }
 
-.nav-offset {
-  max-width: 200px;
-  width: 200px; }
+.nav__item {
+  border-bottom: none;
+  display: block;
+  line-height: 50px;
+  padding: 0 25px;
+  width: 100%;
+  -moz-transition: padding-left 0.5s ease-out;
+  -ms-transition: padding-left 0.5s ease-out;
+  -o-transition: padding-left 0.5s ease-out;
+  -webkit-transition: padding-left 0.5s ease-out;
+  transition: padding-left 0.5s ease-out; }
   @media only screen and (max-width: 768px) {
-    .nav-offset {
-      height: 75px;
-      max-height: 75px;
-      max-width: none;
-      width: 100%; } }
+    .nav__item {
+      line-height: 75px;
+      -moz-transition: background-color 0.5s ease-out;
+      -ms-transition: background-color 0.5s ease-out;
+      -o-transition: background-color 0.5s ease-out;
+      -webkit-transition: background-color 0.5s ease-out;
+      transition: background-color 0.5s ease-out; } }
+
+.nav__item--active {
+  background: #FFFF00;
+  padding-left: 37.5px;
+  pointer-events: none; }
+  @media only screen and (max-width: 768px) {
+    .nav__item--active {
+      padding-left: 25px; } }
 
 /* =============================================================================
   Intro tpl
@@ -154,9 +193,22 @@ h4 {
   max-width: 850px;
   padding: 50px 25px;
   width: 100%; }
+  @media only screen and (max-height: 640px) {
+    .intro__content {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-flow: column-reverse;
+      -ms-flex-flow: column-reverse;
+      -moz-flex-flow: column-reverse;
+      -o-flex-flow: column-reverse;
+      flex-flow: column-reverse; } }
 
 .intro__blurb {
   color: rgba(255, 255, 255, 0.87);
+  line-height: 1.5em;
   margin-bottom: 1em;
   margin-top: 0; }
   .intro__blurb span {
@@ -164,11 +216,10 @@ h4 {
   .intro__blurb a {
     border-bottom: 3px solid #FFFF00;
     padding-bottom: 2px; }
-    .intro__blurb a:hover {
-      border-color: rgba(0, 0, 0, 0.87); }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-height: 640px) {
     .intro__blurb {
-      line-height: 1.5em; } }
+      margin-bottom: 0;
+      margin-top: 1em; } }
 
 .intro__nav {
   margin: 0;
@@ -194,8 +245,6 @@ h4 {
   -o-transition: all 0.5s ease-out;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out; }
-  .intro__link:hover {
-    padding-left: 25px; }
 
 /* =============================================================================
   Work tpl
@@ -211,7 +260,9 @@ h4 {
   -ms-flex-flow: row;
   -moz-flex-flow: row;
   -o-flex-flow: row;
-  flex-flow: row; }
+  flex-flow: row;
+  -webkit-box-flex: 1;
+  flex: 1; }
   @media only screen and (max-width: 768px) {
     .work {
       display: -webkit-box;
@@ -228,8 +279,24 @@ h4 {
 .work__content {
   margin: 0 auto;
   max-width: 850px;
-  overflow: hidden;
-  overflow-y: auto;
-  padding: 25px 25px 50px; }
+  padding: 25px 25px 50px;
+  -webkit-box-flex: 1;
+  flex: 1; }
+
+/* =============================================================================
+  Hover states for no-touch devices
+============================================================================= */
+.no-touch a:hover {
+  border-color: #FFFF00; }
+.no-touch .intro__blurb a:hover {
+  border-color: rgba(0, 0, 0, 0.87); }
+.no-touch .intro__link:hover {
+  padding-left: 25px; }
+.no-touch .nav__item:hover {
+  padding-left: 37.5px; }
+  @media only screen and (max-width: 768px) {
+    .no-touch .nav__item:hover {
+      background: #FFFF00;
+      padding-left: 25px; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,34 +1,64 @@
 /* =============================================================================
   Nav
 ============================================================================= */
+$DESKTOP-NAV-WIDTH: 200px;
+$DESKTOP-NAV-HEIGHT: 100%;
+$MOBILE-NAV-WIDTH: 100%;
+$MOBILE-NAV-HEIGHT: $BUFFER * 3;
+
+.nav-offset {
+  max-width: $DESKTOP-NAV-WIDTH;
+  min-width: $DESKTOP-NAV-WIDTH;
+  @include flex;
+
+  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+    height: $MOBILE-NAV-HEIGHT;
+    max-height: $MOBILE-NAV-HEIGHT;
+    max-width: none;
+    width: $MOBILE-NAV-WIDTH;
+  }
+}
+
 .nav {
-  background: $PRIMARY;
-  color: $WHITE_T87;
-  height: 100%;
+  background: $WHITE_T87;
+  height: $DESKTOP-NAV-HEIGHT;
   left: 0;
-  padding: $BUFFER;
+  padding: $BUFFER 0 $BUFFER * 2;
   position: fixed;
   top: 0;
-  width: 200px;
+  width: $DESKTOP-NAV-WIDTH;
   @include flexbox(column);
   @include flexbox-items(flex-start, center);
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    height: $BUFFER * 3;
-    padding: 0 $BUFFER;
-    width: 100%;
+    height: $MOBILE-NAV-HEIGHT;
+    padding: 0;
+    width: $MOBILE-NAV-WIDTH;
     @include flexbox(row);
+    @include flexbox-items(space-between, center);
   }
 }
 
-.nav-offset {
-  max-width: 200px;
-  width: 200px;
+.nav__item {
+  border-bottom: none;
+  display: block;
+  line-height: $BUFFER * 2;
+  padding: 0 $BUFFER;
+  width: 100%;
+  @include transition(padding-left .5s ease-out);
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    height: $BUFFER * 3;
-    max-height: 75px;
-    max-width: none;
-    width: 100%;
+    line-height: $MOBILE-NAV-HEIGHT;
+    @include transition(background-color .5s ease-out);
+  }
+}
+
+.nav__item--active {
+  background: $ACCENT;
+  padding-left: $BUFFER + ($BUFFER / 2);
+  pointer-events: none;
+
+  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+    padding-left: $BUFFER;
   }
 }

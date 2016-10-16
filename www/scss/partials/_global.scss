@@ -10,7 +10,9 @@ html {
   background: $BACKGROUND;
   color: $PRIMARY;
   font: $FONT_STACK;
+  height: 100%;
   margin: 0;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 
@@ -23,11 +25,7 @@ a {
   border-bottom: 2px solid;
   color: inherit;
   text-decoration: none;
-  @include transition;
-
-  &:hover {
-    border-color: $ACCENT;
-  }
+  @include transition(border-color .3s ease-out);
 }
 
 h1 {
