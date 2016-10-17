@@ -18,11 +18,10 @@ nav.directive('navMenu', function($window) {
   return {
     restrict: 'A',
     link: function(scope, element) {
+      var navMenu = element[0];
       $window.addEventListener('resize', function() {
-        var navMenu = element[0];
-
-        if ($window.innerWidth >= 768 && scope.nav.expanded) {
-          scope.nav.expanded = false;
+        if ($window.innerWidth >= 768 && scope.nav.revealed) {
+          scope.nav.revealed = false;
           scope.$apply();
         }
       });

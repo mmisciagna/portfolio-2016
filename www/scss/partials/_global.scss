@@ -59,7 +59,7 @@ h3 {
   font-weight: 600;
 }
 
-main[ng-view] {
+[ng-view] {
   min-height: 100%;
   @include flexbox(column);
 }

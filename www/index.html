@@ -11,7 +11,9 @@
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
-  <body ng-controller="MainCtrl as main" ng-class="{'no-touch': !main.isTouchDevice}">
+  <body
+      ng-controller="MainCtrl as main"
+      ng-class="{'no-touch': !main.isTouchDevice}">
     <main ng-view></main>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="//code.angularjs.org/1.5.8/angular-route.min.js"></script>

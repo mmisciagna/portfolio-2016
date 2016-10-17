@@ -1,16 +1,29 @@
+<div
+    class="nav-overlay"
+    ng-click="nav.revealed = !nav.revealed"
+    ng-show="nav.revealed">
+</div>
 <div class="nav-offset"></div>
 <div class="nav">
   <h1 class="nav__title">
-    <a href="#/intro">Michael<br>Misciagna</a>
+    <a href="#/intro">Michael Misciagna</a>
   </h1>
-  <button class="nav__menu-button" ng-click="nav.expanded = !nav.expanded">
+  <button
+      class="nav__menu-button"
+      ng-click="nav.revealed = !nav.revealed"
+      aria-label="Reveal nav">
     <ng-md-icon class="nav__menu-icon" icon="menu" size="26"></ng-md-icon> 
   </button>
-  <div class="nav__menu" ng-class="{'nav__menu--expanded': nav.expanded}" nav-menu>
+  <div
+      class="nav__menu"
+      ng-class="{'nav__menu--revealed': nav.revealed}"
+      aria-hidden="{{!nav.revealed}}"
+      nav-menu>
     <div class="nav__close">
        <button
           class="nav__close-button"
-          ng-click="nav.expanded = !nav.expanded">
+          ng-click="nav.revealed = !nav.revealed"
+          aria-label="Hide nav">
         <ng-md-icon class="nav__close-icon" icon="close" size="26"></ng-md-icon> 
       </button>
     </div>

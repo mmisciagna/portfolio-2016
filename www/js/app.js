@@ -18,7 +18,7 @@ app.config(function($routeProvider) {
   });
 });
 
-app.Ctrl = function() {
+app.Ctrl = function($rootScope) {
   this.isTouchDevice = 'ontouchstart' in document.documentElement;
 };
 

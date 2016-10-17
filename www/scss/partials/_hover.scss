@@ -16,10 +16,5 @@
 
   .nav__item:hover {
     padding-left: $BUFFER + ($BUFFER / 2);
-
-    @media only screen and (max-width: $TABLET_BREAKPOINT) {
-      background: $ACCENT;
-      padding-left: $BUFFER;
-    }
   }
 }

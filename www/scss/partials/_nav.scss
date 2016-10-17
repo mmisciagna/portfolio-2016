@@ -6,6 +6,15 @@ $DESKTOP-NAV-HEIGHT: 100%;
 $MOBILE-NAV-WIDTH: 100%;
 $MOBILE-NAV-HEIGHT: $BUFFER * 2;
 
+.nav-overlay {
+  background: rgba(0, 0, 0, .1);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 .nav-offset {
   height: 100%;
   max-width: $DESKTOP-NAV-WIDTH;
@@ -54,10 +63,6 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
     border: none;
     font-size: 1.5em;
-
-    br {
-      display: none;
-    }
   }
 }
 
@@ -118,7 +123,7 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   }
 }
 
-.nav__menu--expanded {
+.nav__menu--revealed {
   pointer-events: initial;
   @include box-shadow(-1px 4px 3px 1px rgba(0, 0, 0, .1));
   @include translate(0, 0);
@@ -131,10 +136,6 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   padding: 0 $BUFFER;
   width: 100%;
   @include transition(padding-left .5s ease-out);
-
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    @include transition(background-color .5s ease-out);
-  }
 }
 
 .nav__item--active {

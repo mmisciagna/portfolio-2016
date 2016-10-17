@@ -57,7 +57,7 @@ h3 {
   font-size: 1.25rem;
   font-weight: 600; }
 
-main[ng-view] {
+[ng-view] {
   min-height: 100%;
   display: -webkit-box;
   display: -moz-box;
@@ -73,6 +73,14 @@ main[ng-view] {
 /* =============================================================================
   Nav
 ============================================================================= */
+.nav-overlay {
+  background: rgba(0, 0, 0, 0.1);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
 .nav-offset {
   height: 100%;
   max-width: 200px;
@@ -132,9 +140,7 @@ main[ng-view] {
   @media only screen and (max-width: 768px) {
     .nav__title {
       border: none;
-      font-size: 1.5em; }
-      .nav__title br {
-        display: none; } }
+      font-size: 1.5em; } }
 
 .nav__menu-button, .nav__close-button {
   background: #FFFF00;
@@ -184,7 +190,7 @@ main[ng-view] {
     -webkit-transform: translate(100%, 0);
     transform: translate(100%, 0); } }
 
-.nav__menu--expanded {
+.nav__menu--revealed {
   pointer-events: initial;
   -moz-box-shadow: -1px 4px 3px 1px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: -1px 4px 3px 1px rgba(0, 0, 0, 0.1);
@@ -205,13 +211,6 @@ main[ng-view] {
   -o-transition: padding-left 0.5s ease-out;
   -webkit-transition: padding-left 0.5s ease-out;
   transition: padding-left 0.5s ease-out; }
-  @media only screen and (max-width: 768px) {
-    .nav__item {
-      -moz-transition: background-color 0.5s ease-out;
-      -ms-transition: background-color 0.5s ease-out;
-      -o-transition: background-color 0.5s ease-out;
-      -webkit-transition: background-color 0.5s ease-out;
-      transition: background-color 0.5s ease-out; } }
 
 .nav__item--active {
   background: #FFFF00;
@@ -391,9 +390,5 @@ main[ng-view] {
   padding-left: 25px; }
 .no-touch .nav__item:hover {
   padding-left: 37.5px; }
-  @media only screen and (max-width: 768px) {
-    .no-touch .nav__item:hover {
-      background: #FFFF00;
-      padding-left: 25px; } }
 
 /*# sourceMappingURL=main.css.map */
