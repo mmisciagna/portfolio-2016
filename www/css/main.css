@@ -33,14 +33,12 @@ a {
   transition: border-color 0.3s ease-out; }
 
 h1 {
-  color: rgba(0, 0, 0, 0.87);
   font-size: 2rem;
   font-weight: 400;
   line-height: 1em;
   margin: .5em 0; }
 
 h2, h3 {
-  color: #37474F;
   font-size: 1.75rem;
   font-weight: 400;
   line-height: 1.25em;
@@ -92,7 +90,7 @@ main[ng-view] {
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 25px 0 50px;
+  padding-bottom: 50px;
   position: fixed;
   top: 0;
   width: 200px;
@@ -125,11 +123,15 @@ main[ng-view] {
       flex-flow: row; } }
 
 .nav__title {
-  padding: 0 25px; }
+  border-bottom: 1px solid #E0E0E0;
+  margin: 0;
+  padding: 0.5em 25px;
+  position: relative; }
   .nav__title a {
     border-bottom: none; }
   @media only screen and (max-width: 768px) {
     .nav__title {
+      border: none;
       font-size: 1.5em; }
       .nav__title br {
         display: none; } }

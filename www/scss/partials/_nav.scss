@@ -25,7 +25,7 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: $BUFFER 0 $BUFFER * 2;
+  padding-bottom: $BUFFER * 2;
   position: fixed;
   top: 0;
   width: $DESKTOP-NAV-WIDTH;
@@ -42,13 +42,17 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
 }
 
 .nav__title {
-  padding: 0 $BUFFER;
+  border-bottom: 1px solid $DIVIDER;
+  margin: 0;
+  padding: .5em $BUFFER;
+  position: relative;
 
   a {
     border-bottom: none;
   }
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
+    border: none;
     font-size: 1.5em;
 
     br {
