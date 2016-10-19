@@ -4,8 +4,15 @@
       Hello, my name is <span>Michael Misciagna,</span> pronounced <span>me-shah-nyuh</span>. I&rsquo;m a <span><a href="https://g3doc.corp.google.com/company/teams/brandstudio-devs/">Creative Engineer</a></span> at Google, a role where content and display meet.
     </h1>
     <ul class="intro__nav" ng-controller="NavCtrl as nav">
-      <li class="intro__nav-item" ng-repeat="item in nav.items" ng-if="$index > 0">
-        <a href="{{item.route}}" class="intro__link">{{item.label}}</a>
+      <li
+          class="intro__nav-item"
+          ng-repeat="item in nav.items"
+          ng-if="$index > 0">
+        <a
+            href="{{item.route}}"
+            class="intro__link">
+          {{item.label}}
+        </a>
       </li>
     </ul>
   </div>

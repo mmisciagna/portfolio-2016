@@ -57,8 +57,10 @@
   transition: $params;
 }
 
-@mixin translate($x, $y) {
-  -ms-transform: translate($x, $y);
-  -webkit-transform: translate($x, $y);
-  transform: translate($x, $y);
+@mixin multi-transition($params-1, $params-2) {
+  -moz-transition: $params-1, $params-2;
+  -ms-transition: $params-1, $params-2;
+  -o-transition: $params-1, $params-2;
+  -webkit-transition: $params-1, $params-2;
+  transition: $params-1, $params-2;
 }

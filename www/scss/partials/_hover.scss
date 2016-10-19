@@ -15,6 +15,12 @@
   }
 
   .nav__item:hover {
-    padding-left: $BUFFER + ($BUFFER / 2);
+    border-left-color: transparent;
+    border-right-color: $ACCENT;
+
+    @media only screen and (max-width: $TABLET_BREAKPOINT) {
+      border-left-color: $ACCENT;
+      border-right-color: transparent;
+    }
   }
 }

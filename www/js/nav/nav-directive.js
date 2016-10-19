@@ -5,13 +5,12 @@ var nav = angular.module('nav.directive', [
 // Nav template
 nav.directive('navigation', function() {
   return {
-    restrict: 'E',
+    restrict: 'A',
     scope: {},
-    templateUrl: '../tpls/nav.html',
+    templateUrl: '/tpls/nav.html',
     controller: 'NavCtrl as nav'
   };
 });
-
 
 // Removes expanded class from nav menu on large screens
 nav.directive('navMenu', function($window) {
@@ -20,8 +19,8 @@ nav.directive('navMenu', function($window) {
     link: function(scope, element) {
       var navMenu = element[0];
       $window.addEventListener('resize', function() {
-        if ($window.innerWidth >= 768 && scope.nav.revealed) {
-          scope.nav.revealed = false;
+        if ($window.innerWidth >= 768 && scope.nav.mobileNavRevealed) {
+          scope.nav.mobileNavRevealed = false;
           scope.$apply();
         }
       });

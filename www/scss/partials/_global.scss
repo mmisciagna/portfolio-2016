@@ -16,6 +16,10 @@ html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 
+  &.overlay-is-visible {
+    overflow: hidden;
+  }
+
   @media only screen and (max-width: $MOBILE_BREAKPOINT) {
     font-size: $MOBILE_FONT_SIZE;
   }
@@ -44,7 +48,7 @@ h2 {
   position: relative;
 
   &:after {
-    border-bottom: 3px solid;
+    border-bottom: 3px solid $ACCENT;
     bottom: 0;
     content: '';
     left: 0;

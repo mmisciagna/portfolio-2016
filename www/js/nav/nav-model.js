@@ -1,5 +1,7 @@
 var nav = angular.module('nav.model', []);
 
+
+
 // Nav model constructor
 nav.Model = function() {
   this.navItems = [
@@ -22,6 +24,8 @@ nav.Model = function() {
   ];
 };
 
+
+// Returns the nav items
 nav.Model.prototype.getNavItems = function() {
   return this.navItems;
 };

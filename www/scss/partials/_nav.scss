@@ -6,15 +6,6 @@ $DESKTOP-NAV-HEIGHT: 100%;
 $MOBILE-NAV-WIDTH: 100%;
 $MOBILE-NAV-HEIGHT: $BUFFER * 2;
 
-.nav-overlay {
-  background: rgba(0, 0, 0, .1);
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
 .nav-offset {
   height: 100%;
   max-width: $DESKTOP-NAV-WIDTH;
@@ -53,11 +44,13 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
 .nav__title {
   border-bottom: 1px solid $DIVIDER;
   margin: 0;
-  padding: .5em $BUFFER;
+  padding: 0;
   position: relative;
 
   a {
     border-bottom: none;
+    display: inline-block;
+    padding: .5em 25px;
   }
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
@@ -66,8 +59,53 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   }
 }
 
+.nav-overlay {
+  background: rgba(235, 235, 235,.8);
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1000;
+  @include multi-transition(visibility .25s ease-out, opacity .25s ease-out);
+}
+
+.nav-overlay--visible {
+  opacity: 1;
+  visibility: visible;
+  @include multi-transition(visibility .5s ease-out, opacity .5s ease-out);
+}
+
+.nav__menu {
+  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+    background: $WHITE;
+    height: 100%;
+    max-width: 500px;
+    opacity: 0;
+    overflow-x: none;
+    overflow-y: auto;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    width: 75%;
+    @include multi-transition(visibility .25s ease-out, opacity .25s ease-out);
+  }
+}
+
+.nav__menu--revealed {
+  opacity: 1;
+  pointer-events: initial;
+  visibility: visible;
+  @include box-shadow(-1px 0 10px #BFBFBF);
+  @include multi-transition(visibility .5s ease-out, opacity .5s ease-out);
+}
+
 .nav__menu-button {
-  background: $ACCENT;
+  background: none;
   border: none;
   cursor: pointer;
   display: none;
@@ -83,66 +121,61 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   }
 }
 
-.nav__close-button {
-  @extend .nav__menu-button;
-}
-
-.nav__close {
-  border-bottom: 1px solid $DIVIDER;
-  display: none;
-
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    display: block;
-  }
-}
-
 .nav__menu-icon {
+  fill: $PRIMARY;
+
   svg {
     vertical-align: middle;
   }
+}
+
+.nav__close {
+  display: none;
+
+  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+    border-bottom: 1px solid $DIVIDER;
+    display: block;
+    height: $MOBILE-NAV-HEIGHT;
+    position: relative;
+  }
+}
+
+.nav__close-button {
+  @extend .nav__menu-button;
 }
 
 .nav__close-icon {
   @extend .nav__menu-icon;
 }
 
-.nav__menu {
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    background: $WHITE;
-    height: 100%;
-    overflow-x: none;
-    overflow-y: auto;
-    padding-top: $MOBILE-NAV-HEIGHT;
-    pointer-events: none;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 50%;
-    @include transition(all .3s ease-out);
-    @include translate(100%, 0);
-  }
-}
-
-.nav__menu--revealed {
-  pointer-events: initial;
-  @include box-shadow(-1px 4px 3px 1px rgba(0, 0, 0, .1));
-  @include translate(0, 0);
-}
-
 .nav__item {
   border-bottom: none;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
   display: block;
+  font-size: 14px;
   line-height: $MOBILE-NAV-HEIGHT;
   padding: 0 $BUFFER;
   width: 100%;
-  @include transition(padding-left .5s ease-out);
+  @include transition(border .3s ease-out);
+
+  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+    font-size: 1.5rem;
+    line-height: $BUFFER * 3;
+  }
 }
 
 .nav__item--active {
-  background: $ACCENT;
+  background: $DIVIDER;
+  border-left-color: transparent;
+  border-right-color: $ACCENT;
+  color: $ACCENT;
   pointer-events: none;
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
+    background: $DIVIDER;
+    border-left-color: $ACCENT;
+    border-right-color: transparent;
     padding-left: $BUFFER;
   }
 }
