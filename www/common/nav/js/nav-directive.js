@@ -7,7 +7,7 @@ nav.directive('navigation', function() {
   return {
     restrict: 'A',
     scope: {},
-    templateUrl: '/nav/nav.html',
+    templateUrl: '/common/nav/nav.html',
     controller: 'NavCtrl as nav'
   };
 });
