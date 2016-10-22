@@ -15,7 +15,6 @@ html {
   position: relative;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  @include flexbox(column);
 
   &.mobile-nav-is-visible {
     overflow: hidden;

@@ -16,12 +16,12 @@
     z-index: 1000;
     @include multi-transition(visibility .25s ease-out, opacity .25s ease-out);
   }
-}
 
-.nav--visible {
-  opacity: 1;
-  visibility: visible;
-  @include multi-transition(visibility .5s ease-out, opacity .5s ease-out);
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    @include multi-transition(visibility .5s ease-out, opacity .5s ease-out);
+  }
 }
 
 .nav-offset {
@@ -83,7 +83,8 @@
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
     border-bottom: 1px solid $DIVIDER;
     display: block;
-    height: $MOBILE-MASTHEAD-HEIGHT;
+    max-height: $MOBILE-MASTHEAD-HEIGHT;
+    min-height: $MOBILE-MASTHEAD-HEIGHT;
     position: relative;
   }
 }

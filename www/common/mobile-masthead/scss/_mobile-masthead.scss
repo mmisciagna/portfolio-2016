@@ -1,17 +1,27 @@
 /* =============================================================================
   Mobile Masthead
 ============================================================================= */
-.mobile-masthead__content {
-  background: $WHITE_T87;
+.mobile-masthead {
   display: none;
-  height: $MOBILE-MASTHEAD-HEIGHT;
-  overflow: visible;
-  padding: 0;
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    @include flexbox(row);
-    @include flexbox-items(space-between, center);
+    display: block;
   }
+}
+
+.mobile-masthead-offset {
+  height: $MOBILE-MASTHEAD-HEIGHT;
+}
+
+.mobile-masthead__content {
+  background: $WHITE_T87;
+  height: $MOBILE-MASTHEAD-HEIGHT;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  @include flexbox(row);
+  @include flexbox-items(space-between, center);
 }
 
 .mobile-masthead__title {
@@ -34,9 +44,6 @@
   display: none;
   height: $MOBILE-MASTHEAD-HEIGHT;
   padding: 0 $BUFFER;
-  position: absolute;
-  right: 0;
-  top: 0;
   @include remove-appearance;
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
