@@ -11,9 +11,37 @@
   }
 }
 
+.page__content {
+  padding-bottom: $BUFFER;
+  @include flex;
+}
+
 .page__body {
   margin: 0 auto;
   max-width: $MAX_WIDTH;
-  padding: $BUFFER $BUFFER $BUFFER * 2;
-  @include flex;
+  padding: $BUFFER;
+}
+
+.page__title {
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.25em;
+  margin: 0;
+}
+
+.page__sub-title {
+  @extend .page__title;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding-bottom: 8px;
+  position: relative;
+
+  &:after {
+    border-bottom: 3px solid $ACCENT;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    width: $BUFFER;
+  }
 }
