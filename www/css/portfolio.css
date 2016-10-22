@@ -275,15 +275,16 @@ a {
   flex: 1; }
 
 .page__header {
-  border-bottom: 1px solid #E0E0E0;
-  color: #FF3D00;
-  padding: 25px; }
+  border-bottom: 1px solid #E0E0E0; }
 
-.page__title, .page__sub-title {
+.page__title {
+  color: #FF3D00;
   font-size: 1.75rem;
   font-weight: 400;
   line-height: 1.25em;
-  margin: 0; }
+  margin: 0 auto;
+  max-width: 850px;
+  padding: 25px; }
 
 .page__body {
   margin: 0 auto;
@@ -293,6 +294,8 @@ a {
 .page__sub-title {
   font-size: 1.25rem;
   font-weight: 600;
+  line-height: 1.25em;
+  margin: .5em 0;
   padding-bottom: 8px;
   position: relative; }
   .page__sub-title:after {
