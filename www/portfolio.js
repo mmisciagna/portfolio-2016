@@ -1,4 +1,4 @@
-var app = angular.module('MyPortfolio', [
+var portfolio = angular.module('portfolio', [
   'ngMdIcons',
   'ngRoute',
   'nav.directive'
@@ -6,15 +6,15 @@ var app = angular.module('MyPortfolio', [
 
 
 // Main app config
-app.config(function($routeProvider) {
+portfolio.config(function($routeProvider) {
   $routeProvider.when('/', {
     redirectTo: '/intro'
   }).when('/intro', {
-    templateUrl: '/tpls/intro.html'
+    templateUrl: '/intro/intro.html'
   }).when('/work', {
-    templateUrl: '/tpls/work.html'
+    templateUrl: '/work/work.html'
   }).when('/resume', {
-    templateUrl: '/tpls/resume.html'
+    templateUrl: '/resume/resume.html'
   }).otherwise({
     redirectTo: '/intro'
   });
@@ -23,8 +23,8 @@ app.config(function($routeProvider) {
 
 
 // Main app controller constructor
-app.Ctrl = function() {
+portfolio.Ctrl = function() {
   this.isTouchDevice = 'ontouchstart' in document.documentElement;
 };
 
-app.controller('MainCtrl', app.Ctrl);
+portfolio.controller('MainCtrl', portfolio.Ctrl);
