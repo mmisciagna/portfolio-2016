@@ -1,10 +1,28 @@
 /* =============================================================================
   Nav
 ============================================================================= */
-$DESKTOP-NAV-WIDTH: 200px;
-$DESKTOP-NAV-HEIGHT: 100%;
-$MOBILE-NAV-WIDTH: 100%;
-$MOBILE-NAV-HEIGHT: $BUFFER * 2;
+.nav {
+  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+    background: rgba(235, 235, 235,.8);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+    z-index: 1000;
+    @include multi-transition(visibility .25s ease-out, opacity .25s ease-out);
+  }
+}
+
+.nav--visible {
+  opacity: 1;
+  visibility: visible;
+  @include multi-transition(visibility .5s ease-out, opacity .5s ease-out);
+}
 
 .nav-offset {
   height: 100%;
@@ -12,14 +30,11 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   min-width: $DESKTOP-NAV-WIDTH;
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    height: $MOBILE-NAV-HEIGHT;
-    max-height: $MOBILE-NAV-HEIGHT;
-    max-width: none;
-    width: $MOBILE-NAV-WIDTH;
+    display: none;
   }
 }
 
-.nav {
+.nav__content {
   background: $WHITE_T87;
   height: $DESKTOP-NAV-HEIGHT;
   left: 0;
@@ -33,11 +48,13 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   @include flexbox(column);
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    height: $MOBILE-NAV-HEIGHT;
-    overflow: visible;
-    padding: 0;
-    width: $MOBILE-NAV-WIDTH;
-    @include flexbox(row);
+    background: $WHITE;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    left: auto;
+    max-width: 500px;
+    @include box-shadow(-1px 0 10px #BFBFBF);
   }
 }
 
@@ -45,7 +62,6 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   font-size: 2rem;
   font-weight: 400;
   line-height: 1em;
-  margin: .5em 0;
   margin: 0;
   padding: 0;
   position: relative;
@@ -53,66 +69,31 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   a {
     border-bottom: none;
     display: inline-block;
-    padding: .5em 25px;
+    padding: .5em $BUFFER;
   }
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    border: none;
-    font-size: 1.5em;
+    display: none;
   }
 }
 
-.nav-overlay {
-  background: rgba(235, 235, 235,.8);
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  visibility: hidden;
-  width: 100%;
-  z-index: 1000;
-  @include multi-transition(visibility .25s ease-out, opacity .25s ease-out);
-}
+.nav__menu-header {
+  display: none;
 
-.nav-overlay--visible {
-  opacity: 1;
-  visibility: visible;
-  @include multi-transition(visibility .5s ease-out, opacity .5s ease-out);
-}
-
-.nav__menu {
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    background: $WHITE;
-    height: 100%;
-    max-width: 500px;
-    opacity: 0;
-    overflow-x: none;
-    overflow-y: auto;
-    pointer-events: none;
-    position: fixed;
-    right: 0;
-    top: 0;
-    visibility: hidden;
-    width: 75%;
-    @include multi-transition(visibility .25s ease-out, opacity .25s ease-out);
+    border-bottom: 1px solid $DIVIDER;
+    display: block;
+    height: $MOBILE-MASTHEAD-HEIGHT;
+    position: relative;
   }
 }
 
-.nav__menu--revealed {
-  opacity: 1;
-  pointer-events: initial;
-  visibility: visible;
-  @include box-shadow(-1px 0 10px #BFBFBF);
-  @include multi-transition(visibility .5s ease-out, opacity .5s ease-out);
-}
-
-.nav__menu-button {
+.nav__close-button {
   background: none;
   border: none;
   cursor: pointer;
   display: none;
-  height: $MOBILE-NAV-HEIGHT;
+  height: $MOBILE-MASTHEAD-HEIGHT;
   padding: 0 $BUFFER;
   position: absolute;
   right: 0;
@@ -124,31 +105,12 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   }
 }
 
-.nav__menu-icon {
+.nav__close-icon {
   fill: $PRIMARY;
 
   svg {
     vertical-align: middle;
   }
-}
-
-.nav__close {
-  display: none;
-
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    border-bottom: 1px solid $DIVIDER;
-    display: block;
-    height: $MOBILE-NAV-HEIGHT;
-    position: relative;
-  }
-}
-
-.nav__close-button {
-  @extend .nav__menu-button;
-}
-
-.nav__close-icon {
-  @extend .nav__menu-icon;
 }
 
 .nav__item {
@@ -157,7 +119,7 @@ $MOBILE-NAV-HEIGHT: $BUFFER * 2;
   border-right: 3px solid transparent;
   display: block;
   font-size: 14px;
-  line-height: $MOBILE-NAV-HEIGHT;
+  line-height: $MOBILE-MASTHEAD-HEIGHT;
   padding: 0 $BUFFER;
   width: 100%;
   @include transition(border .3s ease-out);

@@ -15,8 +15,9 @@ html {
   position: relative;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  @include flexbox(column);
 
-  &.overlay-is-visible {
+  &.mobile-nav-is-visible {
     overflow: hidden;
   }
 
@@ -34,5 +35,10 @@ a {
 
 [ng-view] {
   min-height: 100%;
-  @include flexbox(column);
+  @include flexbox(row);
+  @include flex;
+
+  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+    @include flexbox(column);
+  }
 }

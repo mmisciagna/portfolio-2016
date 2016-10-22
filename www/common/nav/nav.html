@@ -1,40 +1,24 @@
-<div
-    class="nav-overlay"
-    ng-click="nav.resetMobileNav()"
-    ng-class="{'nav-overlay--visible': nav.mobileNavRevealed}">
-</div>
 <div class="nav-offset"></div>
-<div class="nav">
+<div class="nav__content">
   <h1 class="nav__title">
-    <a ng-click="nav.resetMobileNav()" href="#/intro">Michael Misciagna</a>
+    <a href="#/intro">Michael Misciagna</a>
   </h1>
-  <button
-      class="nav__menu-button"
-      ng-click="nav.toggleMobileNav()"
-      aria-label="Reveal nav">
-    <ng-md-icon class="nav__menu-icon" icon="menu" size="25"></ng-md-icon> 
-  </button>
-  <div
-      class="nav__menu"
-      ng-class="{'nav__menu--revealed': nav.mobileNavRevealed}"
-      aria-hidden="{{!nav.mobileNavRevealed}}"
-      nav-menu>
-    <div class="nav__close">
-       <button
-          class="nav__close-button"
-          ng-click="nav.toggleMobileNav()"
-          aria-label="Hide nav">
-        <ng-md-icon class="nav__close-icon" icon="close" size="25"></ng-md-icon> 
-      </button>
-    </div>
-      <a
-          ng-repeat="item in nav.items"
-          class="nav__item"
-          ng-class="{'nav__item--active': nav.isActive('{{item.route}}')}"
-          ng-click="nav.resetMobileNav()"
-          href="{{item.route}}">
-        {{item.label}}
-      </a>
-    </div>
+  <div class="nav__menu-header">
+     <button
+        class="nav__close-button"
+        ng-click="nav.toggleMobileNav()"
+        aria-label="Hide nav">
+      <ng-md-icon class="nav__close-icon" icon="close" size="25"></ng-md-icon> 
+    </button>
+  </div>
+  <div class="nav__menu">
+    <a
+        ng-repeat="item in nav.items"
+        class="nav__item"
+        ng-class="{'nav__item--active': nav.isActive('{{item.route}}')}"
+        ng-click="nav.resetMobileNav()"
+        href="{{item.route}}">
+      {{item.label}}
+    </a>
   </div>
 </div>

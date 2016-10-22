@@ -13,8 +13,8 @@
   </head>
   <body
       ng-controller="MainCtrl as main"
-      ng-class="{'no-touch': !main.isTouchDevice, 'overlay-is-visible': overlayIsVisible}">
-    <main ng-view></main>
+      ng-class="{'no-touch': !main.isTouchDevice, 'mobile-nav-is-visible': mobileNavIsVisible}">
+    <div ng-view></div>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="//code.angularjs.org/1.5.8/angular-route.min.js"></script>
     <!-- <script src="//code.angularjs.org/1.5.8/angular-animate.min.js"></script> -->
@@ -22,6 +22,7 @@
     <script src="common/nav/js/nav-model.js"></script>
     <script src="common/nav/js/nav-controller.js"></script>
     <script src="common/nav/js/nav-directive.js"></script>
+    <script src="common/mobile-masthead/js/mobile-masthead-directive.js"></script>
     <script src="common/page/js/page-header-directive.js"></script>
     <script src="portfolio.js"></script>
   </body>

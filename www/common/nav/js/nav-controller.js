@@ -26,13 +26,13 @@ nav.Ctrl.prototype.isActive = function(route) {
 // Toogles overlay state
 nav.Ctrl.prototype.toggleMobileNav = function() {
   this.mobileNavRevealed = !this.mobileNavRevealed;
-  this.rootScope_.overlayIsVisible = this.mobileNavRevealed;
+  this.rootScope_.mobileNavIsVisible = this.mobileNavRevealed;
 };
 
 
 // Hides overlay and nav drawer on mobile devices
 nav.Ctrl.prototype.resetMobileNav = function() {
-  this.rootScope_.overlayIsVisible = false;
+  this.rootScope_.mobileNavIsVisible = false;
   this.mobileNavRevealed = false;
 };
 
