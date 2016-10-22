@@ -9,7 +9,7 @@ nav.Ctrl = function(NavModel, $rootScope) {
   // Nav items
   this.items = NavModel.getNavItems();
 
-  // Whether the mobile nav drawer is revealed
+  // Whether the mobile nav is revealed
   this.mobileNavRevealed = false;
 
   // The rootScope
@@ -18,7 +18,7 @@ nav.Ctrl = function(NavModel, $rootScope) {
 
 
 // Sets active nav
-nav.Ctrl.prototype.active = function(route) {
+nav.Ctrl.prototype.isActive = function(route) {
   return window.location.hash == route;
 };
 

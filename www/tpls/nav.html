@@ -30,7 +30,7 @@
       <a
           ng-repeat="item in nav.items"
           class="nav__item"
-          ng-class="{'nav__item--active': nav.active('{{item.route}}')}"
+          ng-class="{'nav__item--active': nav.isActive('{{item.route}}')}"
           ng-click="nav.resetMobileNav()"
           href="{{item.route}}">
         {{item.label}}
