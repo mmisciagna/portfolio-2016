@@ -1,0 +1,19 @@
+/* =============================================================================
+  Page
+============================================================================= */
+.page {
+  background-image: url(/imgs/bg-pattern-grey-100.jpg);
+  @include flexbox(row);
+  @include flex;
+
+  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+    @include flexbox(column);
+  }
+}
+
+.page__body {
+  margin: 0 auto;
+  max-width: $MAX_WIDTH;
+  padding: $BUFFER $BUFFER $BUFFER * 2;
+  @include flex;
+}
