@@ -2,7 +2,7 @@ var portfolio = angular.module('portfolio', [
   'ngMdIcons',
   'ngRoute',
   'nav.directive',
-  'page.title'
+  'page.header'
 ]);
 
 
