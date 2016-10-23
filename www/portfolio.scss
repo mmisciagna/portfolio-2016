@@ -1,9 +1,9 @@
-@import 'scss/_colors.scss';
-@import 'scss/_constants.scss';
-@import 'scss/_mixins.scss';
-@import 'scss/_global.scss';
+@import 'scss-partials/_colors.scss';
+@import 'scss-partials/_constants.scss';
+@import 'scss-partials/_mixins.scss';
+@import 'scss-partials/_global.scss';
 @import 'common/nav/scss/_nav.scss';
 @import 'common/mobile-masthead/scss/_mobile-masthead.scss';
 @import 'intro/scss/_intro.scss';
 @import 'common/page/scss/_page.scss';
-@import 'scss/_hover.scss';
+@import 'scss-partials/_hover.scss';

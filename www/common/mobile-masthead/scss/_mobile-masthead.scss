@@ -29,12 +29,21 @@
   font-weight: 400;
   line-height: 1em;
   margin: 0;
+}
 
-  a {
-    border-bottom: none;
-    display: inline-block;
-    padding: 0 $BUFFER;
-  }
+.mobile-masthead__logo-link {
+  border-bottom: none;
+  padding: 1rem $BUFFER;
+}
+
+.mobile-masthead__logo-aria-label {
+  position: absolute;
+  left: -9999px;
+}
+
+.mobile-masthead__logo-mark {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .mobile-masthead__menu-button {

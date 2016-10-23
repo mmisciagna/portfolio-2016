@@ -32,6 +32,11 @@
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
     display: none;
   }
+
+  @media only screen and (min-width: $LG_DESKTOP_BREAKPOINT) {
+    max-width: $LG-DESKTOP-NAV-WIDTH;
+    min-width: $LG-DESKTOP-NAV-WIDTH;
+  }
 }
 
 .nav__content {
@@ -56,9 +61,14 @@
     max-width: 500px;
     @include box-shadow(-1px 0 10px #BFBFBF);
   }
+
+  @media only screen and (min-width: $LG_DESKTOP_BREAKPOINT) {
+    text-align: right;
+    width: $LG-DESKTOP-NAV-WIDTH;
+  }
 }
 
-.nav__title {
+.nav__logo {
   font-size: 2rem;
   font-weight: 400;
   line-height: 1em;
@@ -66,15 +76,26 @@
   padding: 0;
   position: relative;
 
-  a {
-    border-bottom: none;
-    display: inline-block;
-    padding: 1rem $BUFFER;
-  }
-
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
     display: none;
   }
+}
+
+.nav__logo-link {
+  border-bottom: none;
+  display: block;
+  padding: 1rem $BUFFER;
+}
+
+.nav__logo-aria-label {
+  position: absolute;
+  left: -9999px;
+}
+
+.nav__logo-mark {
+  display: inline-block;
+  max-width: 150px;
+  vertical-align: middle;
 }
 
 .nav__menu-header {
@@ -128,6 +149,10 @@
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
     font-size: 1.5rem;
     line-height: $BUFFER * 3;
+  }
+
+  @media only screen and (min-width: $LG_DESKTOP_BREAKPOINT) {
+    font-size: 1rem;
   }
 }
 
