@@ -63,75 +63,6 @@ a {
       flex-flow: column; } }
 
 /* =============================================================================
-  Mobile Masthead
-============================================================================= */
-.mobile-masthead {
-  display: none; }
-  @media only screen and (max-width: 768px) {
-    .mobile-masthead {
-      display: block; } }
-
-.mobile-masthead-offset {
-  height: 50px; }
-
-.mobile-masthead__content {
-  background: rgba(255, 255, 255, 0.87);
-  height: 50px;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row;
-  -ms-flex-flow: row;
-  -moz-flex-flow: row;
-  -o-flex-flow: row;
-  flex-flow: row;
-  -webkit-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -o-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -ms-align-items: center;
-  -moz-align-items: center;
-  -o-align-items: center;
-  align-items: center; }
-
-.mobile-masthead__title {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1em;
-  margin: 0; }
-  .mobile-masthead__title a {
-    border-bottom: none;
-    display: inline-block;
-    padding: 0 25px; }
-
-.mobile-masthead__menu-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: none;
-  height: 50px;
-  padding: 0 25px;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none; }
-  @media only screen and (max-width: 768px) {
-    .mobile-masthead__menu-button {
-      display: block; } }
-
-.mobile-masthead__menu-icon {
-  fill: #3E2723; }
-  .mobile-masthead__menu-icon svg {
-    vertical-align: middle; }
-
-/* =============================================================================
   Nav
 ============================================================================= */
 @media only screen and (max-width: 768px) {
@@ -213,7 +144,7 @@ a {
   .nav__title a {
     border-bottom: none;
     display: inline-block;
-    padding: 0.5em 25px; }
+    padding: 1rem 25px; }
   @media only screen and (max-width: 768px) {
     .nav__title {
       display: none; } }
@@ -283,10 +214,24 @@ a {
       padding-left: 25px; } }
 
 /* =============================================================================
-  Page
+  Mobile Masthead
 ============================================================================= */
-.page {
-  background-image: url(/imgs/bg-pattern-grey-100.jpg);
+.mobile-masthead {
+  display: none; }
+  @media only screen and (max-width: 768px) {
+    .mobile-masthead {
+      display: block; } }
+
+.mobile-masthead-offset {
+  height: 50px; }
+
+.mobile-masthead__content {
+  background: rgba(255, 255, 255, 0.87);
+  height: 50px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -297,57 +242,45 @@ a {
   -moz-flex-flow: row;
   -o-flex-flow: row;
   flex-flow: row;
-  -webkit-box-flex: 1;
-  flex: 1; }
-  @media only screen and (max-width: 768px) {
-    .page {
-      display: -webkit-box;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-flex-flow: column;
-      -ms-flex-flow: column;
-      -moz-flex-flow: column;
-      -o-flex-flow: column;
-      flex-flow: column; } }
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center; }
 
-.page__content {
-  padding-bottom: 25px;
-  -webkit-box-flex: 1;
-  flex: 1; }
-
-.page__header {
-  border-bottom: 1px solid #E0E0E0; }
-
-.page__title {
-  color: #FF3D00;
-  font-size: 1.75rem;
+.mobile-masthead__title {
+  font-size: 1.5rem;
   font-weight: 400;
-  line-height: 1.25em;
-  margin: 0 auto;
-  max-width: 850px;
-  padding: 25px; }
+  line-height: 1em;
+  margin: 0; }
+  .mobile-masthead__title a {
+    border-bottom: none;
+    display: inline-block;
+    padding: 0 25px; }
 
-.page__body {
-  margin: 0 auto;
-  max-width: 850px;
-  padding: 0 25px 25px; }
+.mobile-masthead__menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  height: 50px;
+  padding: 0 25px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none; }
+  @media only screen and (max-width: 768px) {
+    .mobile-masthead__menu-button {
+      display: block; } }
 
-.page__sub-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.25em;
-  margin: .5em 0;
-  padding-bottom: 8px;
-  position: relative; }
-  .page__sub-title:after {
-    border-bottom: 3px solid #FF3D00;
-    bottom: 0;
-    content: '';
-    left: 0;
-    position: absolute;
-    width: 25px; }
+.mobile-masthead__menu-icon {
+  fill: #3E2723; }
+  .mobile-masthead__menu-icon svg {
+    vertical-align: middle; }
 
 /* =============================================================================
   Intro tpl
@@ -434,6 +367,73 @@ a {
   -o-transition: all 0.5s ease-out;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out; }
+
+/* =============================================================================
+  Page
+============================================================================= */
+.page {
+  background-image: url(/imgs/bg-pattern-grey-100.jpg);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row;
+  -ms-flex-flow: row;
+  -moz-flex-flow: row;
+  -o-flex-flow: row;
+  flex-flow: row;
+  -webkit-box-flex: 1;
+  flex: 1; }
+  @media only screen and (max-width: 768px) {
+    .page {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+      -moz-flex-flow: column;
+      -o-flex-flow: column;
+      flex-flow: column; } }
+
+.page__content {
+  padding-bottom: 25px;
+  -webkit-box-flex: 1;
+  flex: 1; }
+
+.page__header {
+  border-bottom: 1px solid #E0E0E0; }
+
+.page__title {
+  color: #FF3D00;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.25em;
+  margin: 0 auto;
+  max-width: 850px;
+  padding: 1rem 25px; }
+
+.page__body {
+  margin: 0 auto;
+  max-width: 850px;
+  padding: 0 25px 25px; }
+
+.page__sub-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25em;
+  margin: .5em 0;
+  padding-bottom: 8px;
+  position: relative; }
+  .page__sub-title:after {
+    border-bottom: 3px solid #FF3D00;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    width: 25px; }
 
 /* =============================================================================
   Hover states for no-touch devices
