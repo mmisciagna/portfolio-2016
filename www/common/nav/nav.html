@@ -9,8 +9,8 @@
   <div class="nav__menu-header">
      <button
         class="nav__close-button"
-        ng-click="nav.toggleMobileNav()"
-        aria-label="Hide nav">
+        aria-label="Hide nav"
+        toggle-nav>
       <ng-md-icon class="nav__close-icon" icon="close" size="25"></ng-md-icon> 
     </button>
   </div>
@@ -19,8 +19,8 @@
         ng-repeat="item in nav.items"
         class="nav__item"
         ng-class="{'nav__item--active': nav.isActive('{{item.route}}')}"
-        ng-click="nav.resetMobileNav()"
-        href="{{item.route}}">
+        href="{{item.route}}"
+        reset-nav>
       {{item.label}}
     </a>
   </div>

@@ -3,6 +3,7 @@ var nav = angular.module('nav.directive', [
 ]);
 
 
+// Nav template
 nav.directive('nav', function($window) {
   return {
     restrict: 'C',
@@ -14,6 +15,36 @@ nav.directive('nav', function($window) {
           scope.nav.mobileNavRevealed = false;
           scope.$apply();
         }
+      });
+    }
+  };
+});
+
+
+// Toggle nav
+nav.directive('toggleNav', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element) {
+      var button = element[0];
+      button.addEventListener('click', function() {
+        scope.nav.toggleMobileNav();
+        scope.$apply();
+      });
+    }
+  };
+});
+
+
+// Reset nav
+nav.directive('resetNav', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element) {
+      var button = element[0];
+      button.addEventListener('click', function() {
+        scope.nav.resetMobileNav();
+        scope.$apply();
       });
     }
   };

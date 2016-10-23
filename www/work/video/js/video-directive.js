@@ -14,14 +14,14 @@ video.directive('videoContainer', function() {
 
 
 // Play video and remove any others
-video.directive('video', function() {
+video.directive('playVideo', function() {
   return {
-    restrict: 'C',
+    restrict: 'A',
     controller: 'VideoCtrl as video',
     link: function(scope, element) {
-      var button = element.find('button');
-      button.bind('click', function() {
-        scope.video.isPlaying = true;
+      var button = element[0];
+      button.addEventListener('click', function() {
+        scope.video.play();
         scope.$apply();
       });
     }
