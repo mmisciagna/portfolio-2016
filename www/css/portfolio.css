@@ -453,7 +453,7 @@ a {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.25em;
-  margin: .5em 0;
+  margin: 1rem 0;
   padding-bottom: 8px;
   position: relative; }
   .page__sub-title:after {
@@ -463,6 +463,36 @@ a {
     left: 0;
     position: absolute;
     width: 25px; }
+
+/* =============================================================================
+  Work tpl
+============================================================================= */
+.launch {
+  border: none;
+  margin-left: 4px; }
+
+.launch__icon {
+  bottom: 2px;
+  fill: #3E2723;
+  position: relative;
+  -moz-transition: fill 0.3s ease-out;
+  -ms-transition: fill 0.3s ease-out;
+  -o-transition: fill 0.3s ease-out;
+  -webkit-transition: fill 0.3s ease-out;
+  transition: fill 0.3s ease-out; }
+  .launch__icon svg {
+    vertical-align: middle; }
+
+.video {
+  padding-bottom: 60.7%;
+  position: relative; }
+
+.video__iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
 
 /* =============================================================================
   Hover states for no-touch devices
@@ -480,5 +510,7 @@ a {
     .no-touch .nav__item:hover {
       border-left-color: #FF3D00;
       border-right-color: transparent; } }
+.no-touch .launch:hover .launch__icon {
+  fill: #FF3D00; }
 
 /*# sourceMappingURL=portfolio.css.map */

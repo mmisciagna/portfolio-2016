@@ -23,4 +23,10 @@
       border-right-color: transparent;
     }
   }
+
+  .launch:hover {
+    .launch__icon {
+      fill: $ACCENT;
+    }
+  }
 }
