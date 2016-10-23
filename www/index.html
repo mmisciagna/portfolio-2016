@@ -8,21 +8,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="imgs/favicon.png?002" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/portfolio.css">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/portfolio.css">
   </head>
   <body
       ng-controller="MainCtrl as main"
       ng-class="{'no-touch': !main.isTouchDevice, 'mobile-nav-is-visible': mobileNavIsVisible}">
     <div ng-view></div>
+    <!-- Angular -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="//code.angularjs.org/1.5.8/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.5.8/angular-sanitize.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
-    <script src="common/nav/js/nav-model.js"></script>
-    <script src="common/nav/js/nav-controller.js"></script>
-    <script src="common/nav/js/nav-directive.js"></script>
-    <script src="common/mobile-masthead/js/mobile-masthead-directive.js"></script>
-    <script src="common/page/js/page-header-directive.js"></script>
-    <script src="portfolio.js"></script>
+    <!-- Nav -->
+    <script src="/common/nav/js/nav-model.js"></script>
+    <script src="/common/nav/js/nav-controller.js"></script>
+    <script src="/common/nav/js/nav-directive.js"></script>
+    <!-- Mobile masthead -->
+    <script src="/common/mobile-masthead/js/mobile-masthead-directive.js"></script>
+    <script src="/common/page/js/page-header-directive.js"></script>
+    <!-- Work & videos -->
+    <script src="/work/video/js/video-model.js"></script>
+    <script src="/work/js/work-controller.js"></script>
+    <script src="/work/video/js/video-controller.js"></script>
+    <script src="/work/video/js/video-directive.js"></script>
+    <!-- Main -->
+    <script src="/portfolio.js"></script>
   </body>
 </html>

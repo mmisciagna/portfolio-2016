@@ -1,33 +1,30 @@
 /* =============================================================================
-  Work tpl
+  Video
 ============================================================================= */
-.launch {
-  border: none;
-  margin-left: 4px;
-}
+.video__container {
+  margin: 2rem 0;
 
-.launch__icon {
-  bottom: 2px;
-  fill: $PRIMARY;
-  position: relative;
-  @include transition(fill .3s ease-out);
-
-  svg {
-    vertical-align: middle;
+  &:first-child {
+    margin: 0;
   }
 }
 
 .video {
+  margin: 1rem 0;
   padding-bottom: 60.75%;
   position: relative;
 }
 
-.video__iframe {
+.video__wrapper {
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.video__iframe {
+  @extend .video__wrapper;
 }
 
 .video__play-btn {

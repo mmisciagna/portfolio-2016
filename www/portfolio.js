@@ -3,7 +3,8 @@ var portfolio = angular.module('portfolio', [
   'ngRoute',
   'mobile.masthead',
   'nav.directive',
-  'page.header'
+  'page.header',
+  'video.directive'
 ]);
 
 
@@ -14,6 +15,7 @@ portfolio.config(function($routeProvider) {
   }).when('/intro', {
     templateUrl: '/intro/intro.html'
   }).when('/work', {
+    controller: 'WorkCtrl as work',
     templateUrl: '/work/work.html'
   }).when('/resume', {
     templateUrl: '/resume/resume.html'

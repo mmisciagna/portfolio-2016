@@ -29,4 +29,10 @@
       fill: $ACCENT;
     }
   }
+
+  .video__play-btn:hover {
+    .video__play-icon {
+      opacity: 1;
+    }
+  }
 }

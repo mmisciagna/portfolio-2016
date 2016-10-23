@@ -1,0 +1,24 @@
+<h3 class="page__sub-title">
+  {{videoItem.title}}
+  <a
+      class="launch"
+      href="{{videoItem.link}}"
+      target="_blank"
+      aria-label="Launch {{videoItem.title}}">
+    <ng-md-icon class="launch__icon" icon="launch" size="20"></ng-md-icon>
+  </a>
+</h3>
+<div class="video">
+  <button
+      class="video__play-btn"
+      video-id="{{videoItem.id}}"
+      arial-label="Play video"
+      style="background-image: url(/imgs/video-thumb-{{videoItem.id}}.jpg)">
+    <ng-md-icon class="video__play-icon" icon="play_arrow" size="100"></ng-md-icon>
+  </button>
+  <div
+      class="video__wrapper"
+      ng-bind-html="work.getEmebedHtml(videoItem.iframe)"
+      ng-if="video.isPlaying">
+  </div>
+</div>

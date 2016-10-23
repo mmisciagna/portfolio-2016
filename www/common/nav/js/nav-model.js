@@ -6,20 +6,20 @@ var nav = angular.module('nav.model', []);
 nav.Model = function() {
   this.navItems = [
     {
-      'label': 'Intro',
-      'route': '#/intro'
+      label: 'Intro',
+      route: '#/intro'
     },
     {
-      'label': 'Work',
-      'route': '#/work'
+      label: 'Work',
+      route: '#/work'
     },
     {
-      'label': 'Résumé',
-      'route': '#/resume'
+      label: 'Résumé',
+      route: '#/resume'
     },
     {
-      'label': 'Contact',
-      'route': 'https://teams.googleplex.com/u/mmisciagna'
+      label: 'Contact',
+      route: 'https://teams.googleplex.com/u/mmisciagna'
     }
   ];
 };

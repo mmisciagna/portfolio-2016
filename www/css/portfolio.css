@@ -164,7 +164,7 @@ a {
 
 .nav__logo-mark {
   display: inline-block;
-  max-width: 150px;
+  max-width: 100px;
   vertical-align: middle; }
 
 .nav__menu-header {
@@ -238,7 +238,8 @@ a {
   Mobile Masthead
 ============================================================================= */
 .mobile-masthead {
-  display: none; }
+  display: none;
+  z-index: 100; }
   @media only screen and (max-width: 768px) {
     .mobile-masthead {
       display: block; } }
@@ -282,7 +283,8 @@ a {
 
 .mobile-masthead__logo-link {
   border-bottom: none;
-  padding: 1rem 25px; }
+  display: block;
+  padding: 0 25px; }
 
 .mobile-masthead__logo-aria-label {
   position: absolute;
@@ -290,6 +292,7 @@ a {
 
 .mobile-masthead__logo-mark {
   display: inline-block;
+  height: 30px;
   vertical-align: middle; }
 
 .mobile-masthead__menu-button {
@@ -494,6 +497,82 @@ a {
   top: 0;
   width: 100%; }
 
+.video__play-btn {
+  border: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none; }
+
+.video__play-icon {
+  fill: #FF3D00;
+  opacity: .5;
+  -moz-transition: opacity 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out; }
+  @media only screen and (max-width: 640px) {
+    .video__play-icon svg {
+      width: 50px; } }
+
+/* =============================================================================
+  Video
+============================================================================= */
+.video__container {
+  margin: 2rem 0; }
+  .video__container:first-child {
+    margin: 0; }
+
+.video {
+  margin: 1rem 0;
+  padding-bottom: 60.75%;
+  position: relative; }
+
+.video__wrapper, .video__iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.video__play-btn {
+  border: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none; }
+
+.video__play-icon {
+  fill: #FF3D00;
+  opacity: .5;
+  -moz-transition: opacity 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out; }
+  @media only screen and (max-width: 640px) {
+    .video__play-icon svg {
+      width: 50px; } }
+
 /* =============================================================================
   Hover states for no-touch devices
 ============================================================================= */
@@ -512,5 +591,7 @@ a {
       border-right-color: transparent; } }
 .no-touch .launch:hover .launch__icon {
   fill: #FF3D00; }
+.no-touch .video__play-btn:hover .video__play-icon {
+  opacity: 1; }
 
 /*# sourceMappingURL=portfolio.css.map */

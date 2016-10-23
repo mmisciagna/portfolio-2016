@@ -3,6 +3,7 @@
 ============================================================================= */
 .mobile-masthead {
   display: none;
+  z-index: 100;
 
   @media only screen and (max-width: $TABLET_BREAKPOINT) {
     display: block;
@@ -33,7 +34,8 @@
 
 .mobile-masthead__logo-link {
   border-bottom: none;
-  padding: 1rem $BUFFER;
+  display: block;
+  padding: 0 $BUFFER;
 }
 
 .mobile-masthead__logo-aria-label {
@@ -43,6 +45,7 @@
 
 .mobile-masthead__logo-mark {
   display: inline-block;
+  height: 30px;
   vertical-align: middle;
 }
 
