@@ -29,7 +29,19 @@ portfolio.config(function($routeProvider) {
 
 // Main app controller constructor
 portfolio.Ctrl = function() {
+  // Whether user is on touch device
   this.isTouchDevice = 'ontouchstart' in document.documentElement;
+
+  this.loadIframeApi_();
+};
+
+
+// Load in YT iframe API
+portfolio.Ctrl.prototype.loadIframeApi_ = function() {
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 };
 
 portfolio.controller('MainCtrl', portfolio.Ctrl);

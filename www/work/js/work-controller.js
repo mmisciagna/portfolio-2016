@@ -6,40 +6,58 @@ var work = angular.module('work.ctrl', [
 
 
 // Work controller constructor
-work.Ctrl = function(VideoModel, $sce, $rootScope) {
+work.Ctrl = function(VideoModel, $rootScope) {
   // Work video items
   this.videos = VideoModel.getVideos();
 
   // Whether a vide is playing
   this.videoIsPlaying = false;
 
-  // HTML sanitize provider
-  this.sanitize = $sce;
-
   // The rootScope
   this.rootScope_ = $rootScope;
 
-  // Video iframe
-  this.videoIframe = document.querySelector('.video-modal__iframe');
+  // The video player
+  this.player_ = null;
 };
 
 
-// Returns trusted HTML
-work.Ctrl.prototype.getEmebedHtml = function(html) {
-  return this.sanitize.trustAsHtml(html);
+work.Ctrl.prototype.createVideoPlayer_ = function(videoId) {
+  this.player_ = new YT.Player('video-modal__player', {
+    height: '100%',
+    width: '100%',
+    videoId: videoId,
+    events: {
+      'onReady': this.onPlayerReady
+    }
+  });
+};
+
+
+// Plays video when player is ready
+work.Ctrl.prototype.onPlayerReady = function(e) {
+  e.target.playVideo();
 };
 
 
 // Toggles video modal
 work.Ctrl.prototype.toggleVideo = function(videoId) {
   if (videoId) {
-    this.videoIframe.src =
-        '//www.youtube.com/embed/' + videoId + '?autoplay=1&modestbranding=1' +
-        '&rel=0&showinfo=0"';
-  } else {
-    this.videoIframe.src = '';
+    // Creates video player
+    if (!this.player_) {
+      this.createVideoPlayer_(videoId);
+    } else {
+      // Cues video
+      if (this.player_.getVideoData().video_id != videoId) {
+        this.player_.cueVideoById(videoId);
+      }
+      this.player_.playVideo();
+    }
+  } else if (this.player) {
+    // Pauses video
+    this.player_.pauseVideo();
   }
 
+  // Toggles modal
   this.videoIsPlaying = !this.videoIsPlaying;
   this.rootScope_.disableScroll = this.videoIsPlaying;
 };

@@ -16,7 +16,7 @@ html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 
-  &.mobile-nav-is-visible {
+  &.disable-scroll {
     overflow: hidden;
   }
 
