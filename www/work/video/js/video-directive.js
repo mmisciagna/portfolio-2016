@@ -1,6 +1,5 @@
 var video = angular.module('video.directive', [
-  'work.ctrl',
-  'video.ctrl'
+  'work.ctrl'
 ]);
 
 
@@ -13,15 +12,14 @@ video.directive('videoContainer', function() {
 });
 
 
-// Play video and remove any others
-video.directive('playVideo', function() {
+// Toggles video modal
+video.directive('toggleVideo', function() {
   return {
     restrict: 'A',
-    controller: 'VideoCtrl as video',
-    link: function(scope, element) {
+    link: function(scope, element, attr) {
       var button = element[0];
       button.addEventListener('click', function() {
-        scope.video.play();
+        scope.work.toggleVideo(attr.videoId);
         scope.$apply();
       });
     }

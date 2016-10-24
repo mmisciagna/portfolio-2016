@@ -13,12 +13,13 @@
   </head>
   <body
       ng-controller="MainCtrl as main"
-      ng-class="{'no-touch': !main.isTouchDevice, 'mobile-nav-is-visible': mobileNavIsVisible}">
+      ng-class="{'no-touch': !main.isTouchDevice, 'disable-scroll': disableScroll}">
     <div ng-view></div>
     <!-- Angular -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="//code.angularjs.org/1.5.8/angular-route.min.js"></script>
     <script src="//code.angularjs.org/1.5.8/angular-sanitize.min.js"></script>
+    <script src="//code.angularjs.org/1.5.8/angular-animate.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
     <!-- Nav -->
     <script src="/common/nav/js/nav-model.js"></script>
@@ -26,11 +27,11 @@
     <script src="/common/nav/js/nav-directive.js"></script>
     <!-- Mobile masthead -->
     <script src="/common/mobile-masthead/js/mobile-masthead-directive.js"></script>
+    <!-- Page -->
     <script src="/common/page/js/page-header-directive.js"></script>
-    <!-- Work & videos -->
+    <!-- Work -->
     <script src="/work/video/js/video-model.js"></script>
     <script src="/work/js/work-controller.js"></script>
-    <script src="/work/video/js/video-controller.js"></script>
     <script src="/work/video/js/video-directive.js"></script>
     <!-- Main -->
     <script src="/portfolio.js"></script>

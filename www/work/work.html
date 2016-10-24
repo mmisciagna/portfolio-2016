@@ -10,8 +10,17 @@
     <section class="page__body">
         <article
             class="video__container"
-            ng-repeat="videoItem in work.videos">
+            ng-repeat="videoModel in work.videos">
         </article>
     </section>
   </main>
+</div>
+<div class="video-modal" ng-show="work.videoIsPlaying" toggle-video>
+  <div class="video-modal__wrapper">
+    <iframe
+        class="video-modal__iframe"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+  </div>
 </div>

@@ -53,3 +53,12 @@
     width: $BUFFER;
   }
 }
+
+.page__paragraph-header {
+  @extend .page__sub-title;
+  font-size: 1em;
+
+  &:after {
+    border-bottom-width: 2px;
+  }
+}

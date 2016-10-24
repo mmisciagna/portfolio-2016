@@ -1,25 +1,24 @@
 <h3 class="page__sub-title">
-  {{videoItem.title}}
+  {{videoModel.title}}
   <a
       class="launch"
-      href="{{videoItem.link}}"
+      href="{{videoModel.link}}"
       target="_blank"
-      aria-label="Launch {{videoItem.title}}">
+      aria-label="Launch {{videoModel.title}}">
     <ng-md-icon class="launch__icon" icon="launch" size="20"></ng-md-icon>
   </a>
 </h3>
 <div class="video">
   <button
       class="video__play-btn"
-      video-id="{{videoItem.id}}"
       arial-label="Play video"
-      style="background-image: url(/imgs/video-thumb-{{videoItem.id}}.jpg)"
-      play-video>
-    <ng-md-icon class="video__play-icon" icon="play_arrow" size="100"></ng-md-icon>
+      style="background-image: url(/imgs/video-thumb-{{videoModel.id}}.jpg)"
+      video-id="{{videoModel.id}}"
+      toggle-video>
+    <ng-md-icon class="video__play-icon" icon="play_arrow" size="150"></ng-md-icon>
   </button>
-  <div
-      class="video__wrapper"
-      ng-bind-html="work.getEmebedHtml(videoItem.iframe)"
-      ng-if="video.isPlaying">
-  </div>
 </div>
+<h4 class="page__paragraph-header">Goal</h4>
+<p>{{videoModel.goal}}</p>
+<h4 class="page__paragraph-header">Challenges</h4>
+<p ng-repeat="paragraph in videoModel.challenges">{{paragraph}}</p>

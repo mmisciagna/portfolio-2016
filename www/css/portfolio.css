@@ -452,20 +452,25 @@ a {
   max-width: 850px;
   padding: 0 25px 25px; }
 
-.page__sub-title {
+.page__sub-title, .page__paragraph-header {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.25em;
   margin: 1rem 0;
   padding-bottom: 8px;
   position: relative; }
-  .page__sub-title:after {
+  .page__sub-title:after, .page__paragraph-header:after {
     border-bottom: 3px solid #FF3D00;
     bottom: 0;
     content: '';
     left: 0;
     position: absolute;
     width: 25px; }
+
+.page__paragraph-header {
+  font-size: 1em; }
+  .page__paragraph-header:after {
+    border-bottom-width: 2px; }
 
 /* =============================================================================
   Work tpl
@@ -486,64 +491,75 @@ a {
   .launch__icon svg {
     vertical-align: middle; }
 
-.video {
-  padding-bottom: 60.75%;
-  position: relative; }
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.87);
+  z-index: 10000;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  -moz-flex-flow: column;
+  -o-flex-flow: column;
+  flex-flow: column;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -moz-transition: opacity 0.25s ease-out;
+  -ms-transition: opacity 0.25s ease-out;
+  -o-transition: opacity 0.25s ease-out;
+  -webkit-transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s ease-out; }
+  .video-modal.ng-hide-add, .video-modal.ng-hide-remove {
+    -moz-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    -webkit-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out; }
+  .video-modal.ng-hide {
+    opacity: 0; }
 
-.video__iframe {
+.video-modal__wrapper {
+  padding-bottom: 48.5%;
+  position: relative;
+  width: 80%; }
+
+.video-modal__iframe {
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%; }
-
-.video__play-btn {
-  border: none;
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: pointer;
-  display: block;
-  height: 100%;
-  left: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none; }
-
-.video__play-icon {
-  fill: #FF3D00;
-  opacity: .5;
-  -moz-transition: opacity 0.3s ease-out;
-  -ms-transition: opacity 0.3s ease-out;
-  -o-transition: opacity 0.3s ease-out;
-  -webkit-transition: opacity 0.3s ease-out;
-  transition: opacity 0.3s ease-out; }
-  @media only screen and (max-width: 640px) {
-    .video__play-icon svg {
-      width: 50px; } }
 
 /* =============================================================================
   Video
 ============================================================================= */
 .video__container {
-  margin: 2rem 0; }
+  border-top: 1px solid #E0E0E0;
+  padding: 1rem 0; }
   .video__container:first-child {
-    margin: 0; }
+    border-top: none;
+    padding-top: 0; }
 
 .video {
   margin: 1rem 0;
   padding-bottom: 60.75%;
   position: relative; }
-
-.video__wrapper, .video__iframe {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%; }
 
 .video__play-btn {
   border: none;

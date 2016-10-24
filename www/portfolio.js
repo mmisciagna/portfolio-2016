@@ -1,6 +1,7 @@
 var portfolio = angular.module('portfolio', [
   'ngMdIcons',
   'ngRoute',
+  'ngAnimate',
   'mobile.masthead',
   'nav.directive',
   'page.header',

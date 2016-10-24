@@ -17,42 +17,39 @@
   }
 }
 
-.video {
-  padding-bottom: 60.75%;
-  position: relative;
-}
-
-.video__iframe {
-  height: 100%;
-  left: 0;
-  position: absolute;
+.video-modal {
+  position: fixed;
   top: 0;
-  width: 100%;
-}
-
-.video__play-btn {
-  border: none;
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: pointer;
-  display: block;
-  height: 100%;
   left: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
+  opacity: 1;
   width: 100%;
-  @include remove-appearance
-}
+  height: 100%;
+  background: $WHITE_T87;
+  z-index: 10000;
+  @include flexbox(column);
+  @include flexbox-items(center, center);
+  @include transition(opacity .25s ease-out);
 
-.video__play-icon {
-  fill: $ACCENT;
-  opacity: .5;
-  @include transition(opacity .3s ease-out);
-
-  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
-    svg {
-      width: 50px;
-    }
+  &.ng-hide-add,
+  &.ng-hide-remove {
+    @include transition(opacity .5s ease-out);
   }
+
+  &.ng-hide {
+    opacity: 0;
+  }
+}
+
+.video-modal__wrapper {
+  padding-bottom: 48.5%;
+  position: relative;
+  width: 80%;
+}
+
+.video-modal__iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
