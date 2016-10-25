@@ -1,5 +1,4 @@
 var work = angular.module('work.ctrl', [
-  'ngSanitize',
   'video.model'
 ]);
 
@@ -21,20 +20,22 @@ work.Ctrl = function(VideoModel, $rootScope) {
 };
 
 
+// Creates a YT video player
 work.Ctrl.prototype.createVideoPlayer_ = function(videoId) {
   this.player_ = new YT.Player('video-modal__player', {
     height: '100%',
     width: '100%',
     videoId: videoId,
+    rel: 0,
     events: {
-      'onReady': this.onPlayerReady
+      'onReady': this.onPlayerReady_
     }
   });
 };
 
 
-// Plays video when player is ready
-work.Ctrl.prototype.onPlayerReady = function(e) {
+// Closes modal when video ends
+work.Ctrl.prototype.onPlayerReady_ = function(e) {
   e.target.playVideo();
 };
 

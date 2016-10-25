@@ -1,27 +1,51 @@
 var video = angular.module('video.model', []);
 
 
+var gSheet =
+    'https://spreadsheets.google.com/feeds/list/' +
+    '1rDkX0Al0yGs84PrG5kxkeo0ndGqXgwwBAP-uYoUI_Hw/' +
+    'od6/public/values?alt=json&callback=JSON_CALLBACK';
+
+
 // Video model constructor
-video.Model = function() {
-  this.videos = [
-    {
-      challenges: [
-        'For testing, the UX Researcher wanted to adjust the content based on the user so using Firebase to let her do that without my support or getting into the code herself was important. Firebase also allowed for the user to update content (i.e. Network name, password, contact info) in real-time while reflecting the updates on every page of the prototype.',
-        'Angular\'s Material grid layout doesn\'t allow the card height to adjust with the content. Using the Masonry JS plugin to allow for dynamic card heights was an easy way to achieve the designer\'s goal while at the same time adding a nice animation when the cards reorganize themselves on window resize.'
-      ],
-      goal: 'Build a responsive prototype to the designer\'s pixel-perfect design for mobile testing using Material design elements.',
-      id: '0iQQ4iBIOw4',
-      link: 'https://my-fiber-dot-show.googleplex.com/my-fiber/#/home/pared',
-      role: '20% UX Engineer',
-      title: 'My Fiber'
-    },
-    {
-      id: 'lcxHpMJFTOY',
-      link: 'https://fiber-global-nav-dot-show.googleplex.com/' +
-            'fiber-global-nav/#/fiber',
-      title: 'Fiber Global Nav'
-    }
-  ];
+video.Model = function($http) {
+  // Videos and info
+  this.videos = [];
+
+  // Angular's http service
+  this.http_ = $http;
+
+  this.getData_();
+};
+
+
+// Gets video data from gSheet
+video.Model.prototype.getData_ = function() {
+  var self = this;
+
+  this.http_.jsonp(gSheet).success(function(response) {
+    self.parse_(response.feed.entry);
+  });
+};
+
+
+// Parses gSheet data
+video.Model.prototype.parse_ = function(videoData) {
+  videoData.forEach(function(data) {
+    var videoObj = {};
+    videoObj.title = data.gsx$title.$t;
+    videoObj.id = data.gsx$videoid.$t;
+    videoObj.role = data.gsx$role.$t;
+    videoObj.goal = data.gsx$goal.$t;
+    videoObj.link = data.gsx$link.$t;
+    videoObj.challenges = [data.gsx$challenge.$t];
+
+    if (data.gsx$challenge_2.$t.length) {
+      videoObj.challenges.push(data.gsx$challenge_2.$t);
+    };
+
+    this.videos.push(videoObj);
+  }, this);
 };
 
 
