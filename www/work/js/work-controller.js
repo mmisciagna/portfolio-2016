@@ -26,41 +26,43 @@ work.Ctrl.prototype.createVideoPlayer_ = function(videoId) {
     height: '100%',
     width: '100%',
     videoId: videoId,
-    rel: 0,
-    events: {
-      'onReady': this.onPlayerReady_
-    }
+    playerVars: {rel: 0},
+    events: {'onReady': this.onPlayerReady_}
   });
 };
 
 
-// Closes modal when video ends
+// Plays video 
 work.Ctrl.prototype.onPlayerReady_ = function(e) {
   e.target.playVideo();
 };
 
 
 // Toggles video modal
-work.Ctrl.prototype.toggleVideo = function(videoId) {
+work.Ctrl.prototype.toggleVideo_ = function() {
+  this.videoIsPlaying = !this.videoIsPlaying;
+  this.rootScope_.disableScroll = this.videoIsPlaying;
+};
+
+
+// Handles the video when a thumbnail is clicked
+work.Ctrl.prototype.handleVideo = function(videoId) {
   if (videoId) {
     // Creates video player
     if (!this.player_) {
       this.createVideoPlayer_(videoId);
     } else {
-      // Cues video
+      // Cues the next video
       if (this.player_.getVideoData().video_id != videoId) {
         this.player_.cueVideoById(videoId);
       }
       this.player_.playVideo();
     }
   } else if (this.player) {
-    // Pauses video
     this.player_.pauseVideo();
   }
 
-  // Toggles modal
-  this.videoIsPlaying = !this.videoIsPlaying;
-  this.rootScope_.disableScroll = this.videoIsPlaying;
+  this.toggleVideo_();
 };
 
 work.controller('WorkCtrl', work.Ctrl);

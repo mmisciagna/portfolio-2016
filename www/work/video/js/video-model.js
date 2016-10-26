@@ -1,6 +1,5 @@
 var video = angular.module('video.model', []);
 
-
 var gSheet =
     'https://spreadsheets.google.com/feeds/list/' +
     '1rDkX0Al0yGs84PrG5kxkeo0ndGqXgwwBAP-uYoUI_Hw/' +
@@ -9,7 +8,7 @@ var gSheet =
 
 // Video model constructor
 video.Model = function($http) {
-  // Videos and info
+  // Work videos and info
   this.videos = [];
 
   // Angular's http service

@@ -557,15 +557,16 @@ a {
     padding-top: 0; }
 
 .video {
-  border: 5px solid rgba(255, 255, 255, 0.87);
+  border: 1px solid #E0E0E0;
   margin: 1rem 0;
   padding-bottom: 60.75%;
   position: relative; }
 
 .video__play-btn {
-  border: none;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
+  border: none;
   cursor: pointer;
   display: block;
   height: 100%;
@@ -588,7 +589,7 @@ a {
   transition: opacity 0.3s ease-out; }
   @media only screen and (max-width: 640px) {
     .video__play-icon svg {
-      width: 50px; } }
+      width: 100px; } }
 
 /* =============================================================================
   Hover states for no-touch devices

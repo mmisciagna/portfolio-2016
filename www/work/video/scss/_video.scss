@@ -12,16 +12,17 @@
 }
 
 .video {
-  border: 5px solid $WHITE_T87;
+  border: 1px solid $DIVIDER;
   margin: 1rem 0;
   padding-bottom: 60.75%;
   position: relative;
 }
 
 .video__play-btn {
-  border: none;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
+  border: none;
   cursor: pointer;
   display: block;
   height: 100%;
@@ -40,7 +41,7 @@
 
   @media only screen and (max-width: $MOBILE_BREAKPOINT) {
     svg {
-      width: 50px;
+      width: 100px;
     }
   }
 }

@@ -19,7 +19,7 @@ video.directive('toggleVideo', function() {
     link: function(scope, element, attr) {
       var button = element[0];
       button.addEventListener('click', function() {
-        scope.work.toggleVideo(attr.videoId);
+        scope.work.handleVideo(attr.videoId);
         scope.$apply();
       });
     }
