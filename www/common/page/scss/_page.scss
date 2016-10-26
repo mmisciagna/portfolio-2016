@@ -43,6 +43,8 @@
   margin: 1rem 0;
   padding-bottom: 8px;
   position: relative;
+  @include flexbox;
+  @include flexbox-items(space-between, center);
 
   &:after {
     border-bottom: 3px solid $ACCENT;

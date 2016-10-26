@@ -9,7 +9,7 @@ work.Ctrl = function(VideoModel, $rootScope) {
   // Work video items
   this.videos = VideoModel.getVideos();
 
-  // Whether a vide is playing
+  // Whether a video is playing
   this.videoIsPlaying = false;
 
   // The rootScope
@@ -26,8 +26,12 @@ work.Ctrl.prototype.createVideoPlayer_ = function(videoId) {
     height: '100%',
     width: '100%',
     videoId: videoId,
-    playerVars: {rel: 0},
-    events: {'onReady': this.onPlayerReady_}
+    playerVars: {
+      rel: 0
+    },
+    events: {
+      'onReady': this.onPlayerReady_
+    }
   });
 };
 

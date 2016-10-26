@@ -24,10 +24,18 @@
     }
   }
 
-  .launch:hover {
+  .launch__link:hover {
     .launch__icon {
       fill: $ACCENT;
     }
+  }
+
+  .video__info-btn:hover {
+    @extend .launch__link:hover;
+  }
+
+  .video__close-info-btn:hover {
+    @extend .launch__link:hover;
   }
 
   .video__play-btn:hover {

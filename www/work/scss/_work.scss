@@ -1,22 +1,6 @@
 /* =============================================================================
   Work tpl
 ============================================================================= */
-.launch {
-  border: none;
-  margin-left: 4px;
-}
-
-.launch__icon {
-  bottom: 2px;
-  fill: $PRIMARY;
-  position: relative;
-  @include transition(fill .3s ease-out);
-
-  svg {
-    vertical-align: middle;
-  }
-}
-
 .video-modal {
   position: fixed;
   top: 0;

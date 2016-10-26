@@ -1,5 +1,6 @@
 var video = angular.module('video.directive', [
-  'work.ctrl'
+  'work.ctrl',
+  'video.ctrl'
 ]);
 
 
@@ -20,6 +21,22 @@ video.directive('toggleVideo', function() {
       var button = element[0];
       button.addEventListener('click', function() {
         scope.work.handleVideo(attr.videoId);
+        scope.$apply();
+      });
+    }
+  };
+});
+
+
+// Toggles video info
+video.directive('toggleVideoInfo', function() {
+  return {
+    restrict: 'A',
+    controller: 'VideoCtrl as video',
+    link: function(scope, element, attr) {
+      var button = element[0];
+      button.addEventListener('click', function() {
+        scope.video.toggleVideoInfo();
         scope.$apply();
       });
     }

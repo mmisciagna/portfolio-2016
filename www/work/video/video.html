@@ -1,14 +1,38 @@
 <h3 class="page__sub-title">
-  {{videoModel.title}}
-  <a
-      class="launch"
-      href="{{videoModel.link}}"
-      target="_blank"
-      aria-label="Launch {{videoModel.title}}">
-    <ng-md-icon class="launch__icon" icon="launch" size="20"></ng-md-icon>
-  </a>
+  <span class="video__title">
+    {{videoModel.title}}
+    <a
+        class="launch__link"
+        href="{{videoModel.link}}"
+        target="_blank"
+        aria-label="Launch {{videoModel.title}}">
+      <ng-md-icon class="launch__icon" icon="launch" size="20"></ng-md-icon>
+    </a>
+  </span>
+  <button
+      class="video__info-btn"
+      ng-show="!video.videoInfoIsRevealed"
+      toggle-video-info>
+    <ng-md-icon class="video__info-icon" icon="info" size="20"></ng-md-icon>
+  </button>
+  <button
+      class="video__close-info-btn"
+      ng-show="video.videoInfoIsRevealed"
+      toggle-video-info>
+    <ng-md-icon class="video__close-info-icon" icon="close" size="20"></ng-md-icon>
+  </button>
 </h3>
-<div class="video">
+<div
+    class="video__info"
+    ng-class="{'video__info--isCollpased': video.videoInfoIsRevealed}">
+  <h4 class="page__paragraph-header">Role</h4>
+  <p>{{videoModel.role}}</p>
+  <h4 class="page__paragraph-header">Goal</h4>
+  <p>{{videoModel.goal}}</p>
+  <h4 class="page__paragraph-header">Challenges</h4>
+  <p ng-repeat="paragraph in videoModel.challenges">{{paragraph}}</p>
+</div>
+<div class="video__thumb">
   <button
       class="video__play-btn"
       arial-label="Play video"
@@ -18,9 +42,3 @@
     <ng-md-icon class="video__play-icon" icon="play_arrow" size="150"></ng-md-icon>
   </button>
 </div>
-<h4 class="page__paragraph-header">Role</h4>
-<p>{{videoModel.role}}</p>
-<h4 class="page__paragraph-header">Goal</h4>
-<p>{{videoModel.goal}}</p>
-<h4 class="page__paragraph-header">Challenges</h4>
-<p ng-repeat="paragraph in videoModel.challenges">{{paragraph}}</p>
