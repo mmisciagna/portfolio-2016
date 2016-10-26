@@ -2,6 +2,7 @@
   <span class="video__title">
     {{videoModel.title}}
     <a
+        ng-if="videoModel.link"
         class="launch__link"
         href="{{videoModel.link}}"
         target="_blank"
