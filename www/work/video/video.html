@@ -21,18 +21,9 @@
       ng-show="video.videoInfoIsRevealed"
       toggle-video-info>
     <ng-md-icon class="video__close-info-icon" icon="close" size="20"></ng-md-icon>
+    <small>close info</small>
   </button>
 </h3>
-<div
-    class="video__info"
-    ng-class="{'video__info--isCollpased': video.videoInfoIsRevealed}">
-  <h4 class="page__paragraph-header">Role</h4>
-  <p>{{videoModel.role}}</p>
-  <h4 class="page__paragraph-header">Goal</h4>
-  <p>{{videoModel.goal}}</p>
-  <h4 class="page__paragraph-header">Challenges</h4>
-  <p ng-repeat="paragraph in videoModel.challenges">{{paragraph}}</p>
-</div>
 <div class="video__thumb">
   <button
       class="video__play-btn"
@@ -42,4 +33,14 @@
       toggle-video>
     <ng-md-icon class="video__play-icon" icon="play_arrow" size="150"></ng-md-icon>
   </button>
+  <div
+      class="video__info"
+      ng-class="{'video__info--isRevealed': video.videoInfoIsRevealed}">
+    <h4 class="page__paragraph-header">Role</h4>
+    <p>{{videoModel.role}}</p>
+    <h4 class="page__paragraph-header">Goal</h4>
+    <p>{{videoModel.goal}}</p>
+    <h4 class="page__paragraph-header">Challenges</h4>
+    <p ng-repeat="paragraph in videoModel.challenges">{{paragraph}}</p>
+  </div>
 </div>

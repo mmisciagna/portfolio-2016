@@ -36,6 +36,10 @@
 
   .video__close-info-btn:hover {
     @extend .launch__link:hover;
+
+    small {
+      color: $ACCENT;
+    }
   }
 
   .video__play-btn:hover {

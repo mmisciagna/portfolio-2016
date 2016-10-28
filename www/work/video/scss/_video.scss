@@ -22,6 +22,7 @@
   background: none;
   cursor: pointer;
   margin: 0;
+  padding: 0;
   @include remove-appearance;
 }
 
@@ -31,6 +32,13 @@
 
 .video__close-info-btn {
   @extend .video__info-btn;
+
+  small {
+    bottom: 2px;
+    font-weight: 400;
+    position: relative;
+    @include transition(color .3s ease-out);
+  }
 }
 
 .video__close-info-icon {
@@ -40,18 +48,27 @@
 .video__info {
   background: $BLACK_T87;
   color: $WHITE_T87;
-  max-height: 0;
-  overflow: hidden;
-  @include transition(max-height .75s ease-in-out);
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: $BUFFER;
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  @include transition(opacity .25s ease-out);
 
-  .page__paragraph-header, p {
-    margin: 1rem;
+  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
+    padding: 1rem;
   }
 }
 
-.video__info--isCollpased {
-  max-height: 2000px;
-  @include transition(max-height 1s ease-in-out);
+.video__info--isRevealed {
+  opacity: 1;
+  pointer-events: initial;
+  @include transition(opacity .5s ease-out);
 }
 
 .video__container {

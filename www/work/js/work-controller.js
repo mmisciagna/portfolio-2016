@@ -62,7 +62,7 @@ work.Ctrl.prototype.handleVideo = function(videoId) {
       }
       this.player_.playVideo();
     }
-  } else if (this.player) {
+  } else if (this.player_) {
     this.player_.pauseVideo();
   }
 

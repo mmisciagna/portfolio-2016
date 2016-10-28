@@ -11,7 +11,6 @@ var portfolio = angular.module('portfolio', [
 
 // Main app config
 portfolio.config(function($routeProvider) {
-
   $routeProvider.when('/', {
     redirectTo: '/intro'
   }).when('/intro', {
