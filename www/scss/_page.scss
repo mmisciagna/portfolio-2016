@@ -1,39 +1,36 @@
-/* =============================================================================
-  Page
-============================================================================= */
 .page {
   background-image: url(/imgs/bg-pattern-grey-100.jpg);
   @include flexbox(row);
   @include flex;
 
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+  @media only screen and (max-width: $breakpoint-tablet) {
     @include flexbox(column);
   }
 }
 
 .page__content {
-  padding-bottom: $BUFFER;
+  padding-bottom: $buffer;
   @include flex;
 }
 
 .page__header {
-  border-bottom: 1px solid $DIVIDER;
+  border-bottom: 1px solid $color-divider;
 }
 
 .page__title {
-  color: $ACCENT;
+  color: $color-accent;
   font-size: 1.75rem;
   font-weight: 400;
   line-height: 1.25em;
   margin: 0 auto;
-  max-width: $MAX_WIDTH;
-  padding: 1rem $BUFFER;
+  max-width: $max-width;
+  padding: 1rem $buffer;
 }
 
 .page__body {
   margin: 0 auto;
-  max-width: $MAX_WIDTH;
-  padding: 0 $BUFFER $BUFFER;
+  max-width: $max-width;
+  padding: 0 $buffer $buffer;
 }
 
 .page__sub-title {
@@ -47,12 +44,12 @@
   @include flexbox-items(space-between, center);
 
   &:after {
-    border-bottom: 3px solid $ACCENT;
+    border-bottom: 3px solid $color-accent;
     bottom: 0;
     content: '';
     left: 0;
     position: absolute;
-    width: $BUFFER;
+    width: $buffer;
   }
 }
 

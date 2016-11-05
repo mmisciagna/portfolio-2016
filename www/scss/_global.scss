@@ -7,9 +7,9 @@
 
 body,
 html {
-  background: $BACKGROUND;
-  color: $PRIMARY;
-  font: $FONT_STACK;
+  background: $color-bg;
+  color: $color-primary;
+  font: $font-stack;
   height: 100%;
   margin: 0;
   position: relative;
@@ -20,8 +20,8 @@ html {
     overflow: hidden;
   }
 
-  @media only screen and (max-width: $MOBILE_BREAKPOINT) {
-    font-size: $MOBILE_FONT_SIZE;
+  @media only screen and (max-width: $breakpoint-mobile) {
+    font-size: $font-size-mobile;
   }
 }
 
@@ -37,7 +37,14 @@ a {
   @include flexbox(row);
   @include flex;
 
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+  @media only screen and (max-width: $breakpoint-tablet) {
     @include flexbox(column);
   }
+}
+
+a:active,
+a:focus,
+button:active,
+button:focus {
+  outline: 1px dotted $color-black-38;
 }

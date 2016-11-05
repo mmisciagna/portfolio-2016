@@ -5,18 +5,18 @@
   display: none;
   z-index: 100;
 
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+  @media only screen and (max-width: $breakpoint-tablet) {
     display: block;
   }
 }
 
 .mobile-masthead-offset {
-  height: $MOBILE-MASTHEAD-HEIGHT;
+  height: $mobile-masthead-height;
 }
 
 .mobile-masthead__content {
-  background: $WHITE_T87;
-  height: $MOBILE-MASTHEAD-HEIGHT;
+  background: $color-white-87;
+  height: $mobile-masthead-height;
   left: 0;
   position: fixed;
   top: 0;
@@ -35,7 +35,7 @@
 .mobile-masthead__logo-link {
   border-bottom: none;
   display: block;
-  padding: 0 $BUFFER;
+  padding: 0 $buffer;
 }
 
 .mobile-masthead__logo-aria-label {
@@ -54,17 +54,17 @@
   border: none;
   cursor: pointer;
   display: none;
-  height: $MOBILE-MASTHEAD-HEIGHT;
-  padding: 0 $BUFFER;
+  height: $mobile-masthead-height;
+  padding: 0 $buffer;
   @include remove-appearance;
 
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+  @media only screen and (max-width: $breakpoint-tablet) {
     display: block;
   }
 }
 
 .mobile-masthead__menu-icon {
-  fill: $PRIMARY;
+  fill: $color-primary;
 
   svg {
     vertical-align: middle;

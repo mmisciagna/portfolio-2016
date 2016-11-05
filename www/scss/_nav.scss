@@ -2,7 +2,7 @@
   Nav
 ============================================================================= */
 .nav {
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+  @media only screen and (max-width: $breakpoint-tablet) {
     background: rgba(235, 235, 235,.8);
     height: 100%;
     left: 0;
@@ -26,34 +26,34 @@
 
 .nav-offset {
   height: 100%;
-  max-width: $DESKTOP-NAV-WIDTH;
-  min-width: $DESKTOP-NAV-WIDTH;
+  max-width: $nav-desktop-width;
+  min-width: $nav-desktop-width;
 
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+  @media only screen and (max-width: $breakpoint-tablet) {
     display: none;
   }
 
-  @media only screen and (min-width: $LG_DESKTOP_BREAKPOINT) {
-    max-width: $LG-DESKTOP-NAV-WIDTH;
-    min-width: $LG-DESKTOP-NAV-WIDTH;
+  @media only screen and (min-width: $breakpoint-lg-desktop) {
+    max-width: $nav-lg-desktop-width;
+    min-width: $nav-lg-desktop-width;
   }
 }
 
 .nav__content {
-  background: $WHITE_T87;
-  height: $DESKTOP-NAV-HEIGHT;
+  background: $color-white-87;
+  height: $nav-desktop-height;
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-bottom: $BUFFER * 2;
+  padding-bottom: $buffer * 2;
   position: fixed;
   top: 0;
-  width: $DESKTOP-NAV-WIDTH;
+  width: $nav-desktop-width;
   z-index: 1000;
   @include flexbox(column);
 
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    background: $WHITE;
+  @media only screen and (max-width: $breakpoint-tablet) {
+    background: $color-white;
     position: absolute;
     right: 0;
     width: 100%;
@@ -62,9 +62,9 @@
     @include box-shadow(-1px 0 10px #BFBFBF);
   }
 
-  @media only screen and (min-width: $LG_DESKTOP_BREAKPOINT) {
+  @media only screen and (min-width: $breakpoint-lg-desktop) {
     text-align: right;
-    width: $LG-DESKTOP-NAV-WIDTH;
+    width: $nav-lg-desktop-width;
   }
 }
 
@@ -76,7 +76,7 @@
   padding: 0;
   position: relative;
 
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+  @media only screen and (max-width: $breakpoint-tablet) {
     display: none;
   }
 }
@@ -84,7 +84,7 @@
 .nav__logo-link {
   border-bottom: none;
   display: block;
-  padding: 1rem $BUFFER;
+  padding: 1rem $buffer;
 }
 
 .nav__logo-aria-label {
@@ -101,11 +101,11 @@
 .nav__menu-header {
   display: none;
 
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    border-bottom: 1px solid $DIVIDER;
+  @media only screen and (max-width: $breakpoint-tablet) {
+    border-bottom: 1px solid $color-divider;
     display: block;
-    max-height: $MOBILE-MASTHEAD-HEIGHT;
-    min-height: $MOBILE-MASTHEAD-HEIGHT;
+    max-height: $mobile-masthead-height;
+    min-height: $mobile-masthead-height;
     position: relative;
   }
 }
@@ -115,20 +115,20 @@
   border: none;
   cursor: pointer;
   display: none;
-  height: $MOBILE-MASTHEAD-HEIGHT;
-  padding: 0 $BUFFER;
+  height: $mobile-masthead-height;
+  padding: 0 $buffer;
   position: absolute;
   right: 0;
   top: 0;
   @include remove-appearance;
 
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+  @media only screen and (max-width: $breakpoint-tablet) {
     display: block;
   }
 }
 
 .nav__close-icon {
-  fill: $PRIMARY;
+  fill: $color-primary;
 
   svg {
     vertical-align: middle;
@@ -141,32 +141,32 @@
   border-right: 3px solid transparent;
   display: block;
   font-size: 14px;
-  line-height: $MOBILE-MASTHEAD-HEIGHT;
-  padding: 0 $BUFFER;
+  line-height: $mobile-masthead-height;
+  padding: 0 $buffer;
   width: 100%;
   @include transition(border .3s ease-out);
 
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
+  @media only screen and (max-width: $breakpoint-tablet) {
     font-size: 1.5rem;
-    line-height: $BUFFER * 3;
+    line-height: $buffer * 3;
   }
 
-  @media only screen and (min-width: $LG_DESKTOP_BREAKPOINT) {
+  @media only screen and (min-width: $breakpoint-lg-desktop) {
     font-size: 1rem;
   }
 }
 
 .nav__item--active {
-  background: $DIVIDER;
+  background: $color-divider;
   border-left-color: transparent;
-  border-right-color: $ACCENT;
-  color: $ACCENT;
+  border-right-color: $color-accent;
+  color: $color-accent;
   pointer-events: none;
 
-  @media only screen and (max-width: $TABLET_BREAKPOINT) {
-    background: $DIVIDER;
-    border-left-color: $ACCENT;
+  @media only screen and (max-width: $breakpoint-tablet) {
+    background: $color-divider;
+    border-left-color: $color-accent;
     border-right-color: transparent;
-    padding-left: $BUFFER;
+    padding-left: $buffer;
   }
 }

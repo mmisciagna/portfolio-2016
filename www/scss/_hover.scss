@@ -3,30 +3,30 @@
 ============================================================================= */
 .no-touch {
   a:hover {
-    border-color: $ACCENT;
+    border-color: $color-accent;
   }
 
   .intro__blurb a:hover {
-    border-color: $BLACK_T87;
+    border-color: $color-black-87;
   }
 
   .intro__link:hover {
-    padding-left: $BUFFER;
+    padding-left: $buffer;
   }
 
   .nav__item:hover {
     border-left-color: transparent;
-    border-right-color: $ACCENT;
+    border-right-color: $color-accent;
 
-    @media only screen and (max-width: $TABLET_BREAKPOINT) {
-      border-left-color: $ACCENT;
+    @media only screen and (max-width: $breakpoint-tablet) {
+      border-left-color: $color-accent;
       border-right-color: transparent;
     }
   }
 
   .launch__link:hover {
     .launch__icon {
-      fill: $ACCENT;
+      fill: $color-accent;
     }
   }
 
@@ -38,7 +38,7 @@
     @extend .launch__link:hover;
 
     small {
-      color: $ACCENT;
+      color: $color-accent;
     }
   }
 
