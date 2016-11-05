@@ -8,7 +8,7 @@ var video = angular.module('video.directive', [
 video.directive('videoContainer', function() {
   return {
     restrict: 'C',
-    templateUrl: '/work/video/video.html'
+    templateUrl: '/components/work/video/video.html'
   };
 });
 

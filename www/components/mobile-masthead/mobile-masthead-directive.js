@@ -6,7 +6,7 @@ var mobileMasthead = angular.module('mobile.masthead', [
 mobileMasthead.directive('mobileMasthead', function() {
   return {
     restrict: 'C',
-    templateUrl: '/common/mobile-masthead/mobile-masthead.html',
+    templateUrl: '/components/mobile-masthead/mobile-masthead.html',
     controller: 'NavCtrl as nav'
   };
 });

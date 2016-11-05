@@ -14,12 +14,12 @@ portfolio.config(function($routeProvider) {
   $routeProvider.when('/', {
     redirectTo: '/intro'
   }).when('/intro', {
-    templateUrl: '/intro/intro.html'
+    templateUrl: '/components/intro/intro.html'
   }).when('/work', {
     controller: 'WorkCtrl as work',
-    templateUrl: '/work/work.html'
+    templateUrl: '/components/work/work.html'
   }).when('/resume', {
-    templateUrl: '/resume/resume.html'
+    templateUrl: '/components/resume/resume.html'
   }).otherwise({
     redirectTo: '/intro'
   });
