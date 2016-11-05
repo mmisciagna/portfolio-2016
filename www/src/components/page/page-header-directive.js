@@ -7,6 +7,6 @@ pageHeader.directive('pageTitle', function() {
     scope: {
       pageTitle: '@'
     },
-    templateUrl: '/components/page/page-header.html'
+    templateUrl: '/src/components/page/page-header.html'
   };
 });

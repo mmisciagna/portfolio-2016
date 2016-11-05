@@ -21,6 +21,7 @@
   @extend .launch__link;
   background: none;
   cursor: pointer;
+  height: 25px;
   margin: 0;
   padding: 0;
   @include remove-appearance;

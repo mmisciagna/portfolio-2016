@@ -1,3 +1,4 @@
+// Main module
 var portfolio = angular.module('portfolio', [
   'ngMdIcons',
   'ngRoute',
@@ -7,24 +8,6 @@ var portfolio = angular.module('portfolio', [
   'page.header',
   'video.directive'
 ]);
-
-
-// Main app config
-portfolio.config(function($routeProvider) {
-  $routeProvider.when('/', {
-    redirectTo: '/intro'
-  }).when('/intro', {
-    templateUrl: '/components/intro/intro.html'
-  }).when('/work', {
-    controller: 'WorkCtrl as work',
-    templateUrl: '/components/work/work.html'
-  }).when('/resume', {
-    templateUrl: '/components/resume/resume.html'
-  }).otherwise({
-    redirectTo: '/intro'
-  });
-});
-
 
 
 // Main app controller constructor
@@ -43,5 +26,22 @@ portfolio.Ctrl.prototype.loadIframeApi_ = function() {
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 };
+
+
+// Routing
+portfolio.config(function($routeProvider) {
+  $routeProvider.when('/', {
+    redirectTo: '/intro'
+  }).when('/intro', {
+    templateUrl: '/src/components/intro/intro.html'
+  }).when('/work', {
+    controller: 'WorkCtrl as work',
+    templateUrl: '/src/components/work/work.html'
+  }).when('/resume', {
+    templateUrl: '/src/components/resume/resume.html'
+  }).otherwise({
+    redirectTo: '/intro'
+  });
+});
 
 portfolio.controller('MainCtrl', portfolio.Ctrl);

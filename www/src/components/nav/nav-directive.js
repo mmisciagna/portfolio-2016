@@ -7,7 +7,7 @@ var nav = angular.module('nav.directive', [
 nav.directive('nav', function($window) {
   return {
     restrict: 'C',
-    templateUrl: '/components/nav/nav.html',
+    templateUrl: '/src/components/nav/nav.html',
     controller: 'NavCtrl as nav',
     link: function(scope) {
       $window.addEventListener('resize', function() {

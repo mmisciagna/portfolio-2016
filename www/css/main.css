@@ -69,6 +69,29 @@ button:focus {
   outline: 1px dotted rgba(0, 0, 0, 0.38); }
 
 /* =============================================================================
+  Hover states for no-touch devices
+============================================================================= */
+.no-touch a:hover {
+  border-color: #ff3d00; }
+.no-touch .intro__blurb a:hover {
+  border-color: rgba(0, 0, 0, 0.87); }
+.no-touch .intro__link:hover {
+  padding-left: 25px; }
+.no-touch .nav__item:hover {
+  border-left-color: transparent;
+  border-right-color: #ff3d00; }
+  @media only screen and (max-width: 768px) {
+    .no-touch .nav__item:hover {
+      border-left-color: #ff3d00;
+      border-right-color: transparent; } }
+.no-touch .launch__link:hover .launch__icon, .no-touch .video__info-btn:hover .launch__icon, .no-touch .video__close-info-btn:hover .launch__icon, .no-touch .launch__link:hover .video__info-icon, .no-touch .video__info-btn:hover .video__info-icon, .no-touch .video__close-info-btn:hover .video__info-icon, .no-touch .launch__link:hover .video__close-info-icon, .no-touch .video__info-btn:hover .video__close-info-icon, .no-touch .video__close-info-btn:hover .video__close-info-icon {
+  fill: #ff3d00; }
+.no-touch .video__close-info-btn:hover small {
+  color: #ff3d00; }
+.no-touch .video__play-btn:hover .video__play-icon {
+  opacity: 1; }
+
+/* =============================================================================
   Nav
 ============================================================================= */
 @media only screen and (max-width: 768px) {
@@ -575,6 +598,7 @@ button:focus {
 .video__info-btn, .video__close-info-btn {
   background: none;
   cursor: pointer;
+  height: 25px;
   margin: 0;
   padding: 0;
   -moz-appearance: none;
@@ -663,28 +687,5 @@ button:focus {
   @media only screen and (max-width: 640px) {
     .video__play-icon svg {
       width: 100px; } }
-
-/* =============================================================================
-  Hover states for no-touch devices
-============================================================================= */
-.no-touch a:hover {
-  border-color: #ff3d00; }
-.no-touch .intro__blurb a:hover {
-  border-color: rgba(0, 0, 0, 0.87); }
-.no-touch .intro__link:hover {
-  padding-left: 25px; }
-.no-touch .nav__item:hover {
-  border-left-color: transparent;
-  border-right-color: #ff3d00; }
-  @media only screen and (max-width: 768px) {
-    .no-touch .nav__item:hover {
-      border-left-color: #ff3d00;
-      border-right-color: transparent; } }
-.no-touch .launch__link:hover .launch__icon, .no-touch .video__info-btn:hover .launch__icon, .no-touch .video__close-info-btn:hover .launch__icon, .no-touch .launch__link:hover .video__info-icon, .no-touch .video__info-btn:hover .video__info-icon, .no-touch .video__close-info-btn:hover .video__info-icon, .no-touch .launch__link:hover .video__close-info-icon, .no-touch .video__info-btn:hover .video__close-info-icon, .no-touch .video__close-info-btn:hover .video__close-info-icon {
-  fill: #ff3d00; }
-.no-touch .video__close-info-btn:hover small {
-  color: #ff3d00; }
-.no-touch .video__play-btn:hover .video__play-icon {
-  opacity: 1; }
 
 /*# sourceMappingURL=main.css.map */

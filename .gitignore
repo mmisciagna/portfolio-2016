@@ -1,5 +1,10 @@
-# Google App Engine generated folder
+# Google App Engine generated folder #
+######################
 appengine-generated/
+
+# Gulp #
+######################
+node_modules/
 
 # OS generated files #
 ######################
