@@ -6,12 +6,12 @@
   "private": true,
   "devDependencies": {
     "browser-sync": "^2.17.5",
-    "connect-modrewrite": "^0.9.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-load-plugins": "^1.4.0",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^2.2.0"
+    "gulp-sourcemaps": "^2.2.0",
+    "ng-annotate": "^1.2.1"
   }
 }

@@ -2,12 +2,10 @@
 
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
-const sass = require('gulp-sass');
-const del = require('del');
 const bs = require('browser-sync').create();
-
-// TODO: Remove when moving to GAE
-const modRewrite  = require('connect-modrewrite');
+const del = require('del');
+const sass = require('gulp-sass');
+const ngAnnotate = require('ng-annotate');
 
 const config = {
   index: './index.html',
@@ -23,13 +21,7 @@ gulp.task('clean', () => {
 gulp.task('serve', ['build'], () => {
   bs.init({
     server: '.',
-    open: false,
-    // TODO: Remove when moving to GAE
-    middleware: [
-      modRewrite([
-        '!\\.\\w+$ /index.html [L]'
-      ])
-    ]
+    open: true
   });
 });
 
@@ -44,7 +36,7 @@ gulp.task('sass', () => {
       .pipe(bs.stream());
 });
 
-// Watches for changes
+// Watches for changes and reload the page
 gulp.task('watch', () => {
   gulp.watch(config.sassDir + '*.scss', ['sass']);
   gulp.watch(config.index).on('change', bs.reload);

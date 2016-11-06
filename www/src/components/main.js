@@ -1,47 +1,17 @@
-// Main module
-var portfolio = angular.module('portfolio', [
+const mainAppController = require('./main-controller');
+const routing = require('./routing');
+
+
+/** @const {!angular.Module} */
+const main = angular.module('portfolio', [
   'ngMdIcons',
   'ngRoute',
   'ngAnimate',
-  'mobile.masthead',
-  'nav.directive',
-  'page.header',
-  'video.directive'
+  require('./mobile-masthead/mobile-masthead').name,
+  require('./nav/nav').name,
+  require('./page-header/page-header').name,
+  require('./work/work').name
 ]);
 
-
-// Main app controller constructor
-portfolio.Ctrl = function() {
-  // Whether user is on touch device
-  this.isTouchDevice = 'ontouchstart' in document.documentElement;
-
-  this.loadIframeApi_();
-};
-
-
-// Load in YT iframe API
-portfolio.Ctrl.prototype.loadIframeApi_ = function() {
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-};
-
-
-// Routing
-portfolio.config(function($routeProvider) {
-  $routeProvider.when('/', {
-    redirectTo: '/intro'
-  }).when('/intro', {
-    templateUrl: '/src/components/intro/intro.html'
-  }).when('/work', {
-    controller: 'WorkCtrl as work',
-    templateUrl: '/src/components/work/work.html'
-  }).when('/resume', {
-    templateUrl: '/src/components/resume/resume.html'
-  }).otherwise({
-    redirectTo: '/intro'
-  });
-});
-
-portfolio.controller('MainCtrl', portfolio.Ctrl);
+main.config(routing)
+    .controller('MainCtrl', mainAppController);

@@ -1,16 +1,11 @@
-var video = angular.module('video.ctrl', []);
+module.exports = class VideoController {
+  constructor(VideoService) {
+    // Whether the video info is revealed
+    this.videoInfoIsRevealed = false;
+  }
 
-
-// Video controller constructor
-video.Ctrl = function(VideoModel, $rootScope) {
-  // Whether the video info is revealed
-  this.videoInfoIsRevealed = false;
+  // Toggles video info
+  toggleVideoInfo() {
+    this.videoInfoIsRevealed = !this.videoInfoIsRevealed;
+  }
 };
-
-
-// Toggles video info
-video.Ctrl.prototype.toggleVideoInfo = function() {
-  this.videoInfoIsRevealed = !this.videoInfoIsRevealed;
-};
-
-video.controller('VideoCtrl', video.Ctrl);
