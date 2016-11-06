@@ -1,6 +1,22 @@
-module.exports = class navService {
+/**
+ * @typedef {{
+ *   label: string,
+ *   route: string
+ * }}
+ */
+let navItem;
+
+
+
+/**
+ * Service for setting and getting the nav items
+ */
+module.exports = class NavService {
   constructor() {
-    this.navItems = [
+    /**
+     * @private @const {!Array<!navItem>}
+     */
+    this.navItems_ = [
       {
         label: 'Intro',
         route: '#/intro'
@@ -20,8 +36,12 @@ module.exports = class navService {
     ];
   }
 
-  // Returns the nav items
+
+  /**
+   * @return {!Array<!navItem>}
+   * @export
+   */
   getNavItems() {
-    return this.navItems;
+    return this.navItems_;
   }
 };

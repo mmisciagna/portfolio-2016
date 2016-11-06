@@ -1,19 +1,46 @@
+/** @final @struct */
 module.exports = class WorkController {
+  /**
+   * @param {!VideoService} VideoService
+   * @param {!angular.Scope} $rootScope
+   * @ngInject
+   */
   constructor(VideoService, $rootScope) {
-    // Work video items
+    /**
+     * Video items.
+     *
+     * @export @const {!Array<!videoItem>}
+     */
     this.videos = VideoService.getVideos();
 
-    // Whether a video is playing
+
+    /**
+     * Whether a video is playing.
+     *
+     * @export {boolean>}
+     */
     this.videoIsPlaying = false;
 
-    // The rootScope
+
+    /** @private @const */
     this.rootScope_ = $rootScope;
 
-    // The video player
+
+    /**
+     * YouTube player.
+     *
+     * @private {?YT.Player}
+     */
     this.player_ = null;
   }
 
-  // Creates a YT video player
+
+  /**
+   * Creates the YT video player.
+   *
+   * @param {string} videoId
+   * @private
+   */
   createVideoPlayer_(videoId) {
     this.player_ = new YT.Player('video-modal__player', {
       height: '100%',
@@ -28,18 +55,35 @@ module.exports = class WorkController {
     });
   }
 
-  // Plays video 
+
+  /**
+   * Plays the video when the video player is ready.
+   *
+   * @param {!Event} e
+   * @private
+   */
   onPlayerReady_(e) {
     e.target.playVideo();
   }
 
-  // Toggles video modal
+
+  /**
+   * Toggles video modal.
+   *
+   * @private
+   */
   toggleVideo_() {
     this.videoIsPlaying = !this.videoIsPlaying;
     this.rootScope_.disableScroll = this.videoIsPlaying;
   }
 
-  // Handles the video when a thumbnail is clicked
+
+  /**
+   * Handles the video player when a thumbnail is clicked.
+   *
+   * @param {sting} videoId
+   * @export
+   */
   handleVideo(videoId) {
     if (videoId) {
       // Creates video player

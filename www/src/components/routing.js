@@ -1,5 +1,5 @@
 /**
- * Configures html5Mode and router states.
+ * Configures router states.
  *
  * @param {!angular.$routeProvider} $routeProvider
  * @ngInject
@@ -18,4 +18,4 @@ module.exports = ($routeProvider) => {
   }).otherwise({
     redirectTo: '/intro'
   });
-}
+};

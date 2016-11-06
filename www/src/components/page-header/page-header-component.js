@@ -1,3 +1,8 @@
+/**
+ * Page header component.
+ *
+ * @return {!angular.Directive}
+ */
 module.exports = () => {
   return {
     restrict: 'A',

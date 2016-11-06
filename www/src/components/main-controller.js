@@ -1,10 +1,13 @@
 /**
  * Main app controller.
+ *
  * @final @struct
  */
 module.exports = class MainCtrl {
   constructor() {
-    /** @type {boolean} */
+    /**
+     * @export {boolean}
+     */
     this.isTouchDevice = 'ontouchstart' in document.documentElement;
 
     this.loadYouTubeIframeApi_();

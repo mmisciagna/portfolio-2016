@@ -1,3 +1,8 @@
+/**
+ * Video component.
+ *
+ * @return {!angular.Directive}
+ */
 module.exports = () => {
   return {
     restrict: 'C',

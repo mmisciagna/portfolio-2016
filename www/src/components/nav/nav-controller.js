@@ -1,27 +1,48 @@
-module.exports = class navController {
+/** @final @struct */
+module.exports = class NavController {
+  /**
+   * @param {!NavService} NavService
+   * @param {!angular.Scope} $rootScope
+   * @ngInject
+   */
   constructor(NavService, $rootScope) {
-    // Nav items
+    /**
+     * Nav items.
+     *
+     * @export @const {!Array<!navItem>}
+     */
     this.items = NavService.getNavItems();
 
-    // Whether the mobile nav is revealed
+
+    /** @export {boolean} */
     this.mobileNavRevealed = false;
 
-    // The rootScope
+
+    /** @private @const */
     this.rootScope_ = $rootScope;
   }
 
-  // Sets active nav
+
+  /**
+   * Checks whether the url hash matches the given string.
+   *
+   * @param {string} route The string to test against the url hash.
+   * @return {boolean} 
+   * @export
+   */
   isActive(route) {
     return window.location.hash == route;
   }
 
-  // Toogles overlay state
+
+  /** @export */
   toggleMobileNav() {
     this.mobileNavRevealed = !this.mobileNavRevealed;
     this.rootScope_.disableScroll = this.mobileNavRevealed;
   }
 
-  // Hides overlay and nav drawer on mobile devices
+
+  /** @export */
   resetMobileNav() {
     this.rootScope_.disableScroll = false;
     this.mobileNavRevealed = false;

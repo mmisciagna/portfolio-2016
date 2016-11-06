@@ -1,10 +1,11 @@
+/** @final @struct */
 module.exports = class VideoController {
-  constructor(VideoService) {
-    // Whether the video info is revealed
+  constructor() {
+    /** @export {boolean} */
     this.videoInfoIsRevealed = false;
   }
 
-  // Toggles video info
+  /** @export */
   toggleVideoInfo() {
     this.videoInfoIsRevealed = !this.videoInfoIsRevealed;
   }

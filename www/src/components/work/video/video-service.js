@@ -1,13 +1,34 @@
-// Video model constructor
-module.exports = class VideoService {
-  constructor($http) {
-    // Work videos and info
-    this.videos = [];
+/**
+ * @typedef {{
+ *   title: string,
+ *   id: string,
+ *   role: string,
+ *   goal: string,
+ *   link: string,
+ *   challenges: !Array<string>
+ * }}
+ */
+let videoItem;
 
-    // Angular's http service
+
+
+/**  @final @struct */
+module.exports = class VideoService {
+  /**
+   * @param {!angular.$http} $http
+   * @ngInject
+   */
+  constructor($http) {
+    /** @private @const {!Array<!videoItem>} */
+    this.videos_ = [];
+
+
+    /** @private @const */
     this.http_ = $http;
 
-    this.gSheet_ =
+
+    /** @private @const */
+    this.gSheetUrl_ =
         'https://spreadsheets.google.com/feeds/list/' +
         '1rDkX0Al0yGs84PrG5kxkeo0ndGqXgwwBAP-uYoUI_Hw/' +
         'od6/public/values?alt=json&callback=JSON_CALLBACK';
@@ -15,16 +36,28 @@ module.exports = class VideoService {
     this.getData_();
   }
 
-  // Gets video data from gSheet
+
+  /**
+   * Gets video data from gSheet and parses it on success.
+   *
+   * @private
+   *
+   * TODO: Handle errors.
+   */
   getData_() {
-    this.http_.jsonp(this.gSheet_)
+    this.http_.jsonp(this.gSheetUrl_)
         .success((response) => {
-          this.parse_(response.feed.entry);
+          this.parseData_(response.feed.entry);
         });
   }
 
-  // Parses gSheet data
-  parse_(videoData) {
+
+  /**
+   * Parses video data from gSheet.
+   *
+   * @param {!Array<!videoItem>} videoData
+   */
+  parseData_(videoData) {
     videoData.forEach((data) => {
       var videoObj = {};
       videoObj.title = data.gsx$title.$t;
@@ -38,12 +71,18 @@ module.exports = class VideoService {
         videoObj.challenges.push(data.gsx$challenge_2.$t);
       };
 
-      this.videos.push(videoObj);
+      this.videos_.push(videoObj);
     }, this);
   }
 
-  // Returns the videos
+
+  /**
+   * Returns the videos.
+   *
+   * @return {!Array<!videoItem>}
+   * @export
+   */
   getVideos() {
-    return this.videos;
+    return this.videos_;
   }
 };

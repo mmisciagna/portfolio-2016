@@ -1,5 +1,7 @@
 /**
  * Mobile masthead component.
+ *
+ * @return {!angular.Directive}
  */
 module.exports = () => {
   return {
