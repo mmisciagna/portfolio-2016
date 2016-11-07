@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
+const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const bs = require('browser-sync').create();
 const del = require('del');
@@ -16,16 +17,12 @@ const config = {
   sassDir: './src/scss/',
   sassDestDir: './css/',
   jsSrcDir: './src/components/',
-  jsDestDir: './js/',
+  jsDestDir: './js/'
 };
 
-// TODO: Remove when moving to GAE
-const modRewrite  = require('connect-modrewrite');
-
 // JS config
-const jsSrc = config.jsSrcDir + 'main.js';
 const b = watchify(browserify({
-  entries: [jsSrc],
+  entries: [config.jsSrcDir + 'main.js'],
   cache: {},
   packageCache: {}
 }).transform(stringify, {
@@ -45,13 +42,7 @@ gulp.task('clean', () => {
 gulp.task('serve', ['build'], () => {
   bs.init({
     server: '.',
-    open: false,
-    // TODO: Remove when moving to GAE
-    middleware: [
-      modRewrite([
-        '!\\.\\w+$ /index.html [L]'
-      ])
-    ]
+    open: false
   });
 });
 
@@ -68,12 +59,9 @@ gulp.task('js', () => {
         loadMaps: true
       }))
       .pipe($.ngAnnotate())
-      .pipe($.uglify({
-        // TODO: Remove this later.
-        drop_debugger: false
-      }))
-      .pipe($.sourcemaps.write('./'))
+      .pipe($.uglify())
       .pipe(rename('main.min.js'))
+      .pipe($.sourcemaps.write('./'))
       .pipe(gulp.dest(config.jsDestDir));
 });
 
@@ -89,6 +77,8 @@ gulp.task('sass', () => {
       .pipe($.plumber())
       .pipe($.sourcemaps.init())
       .pipe($.sass())
+      .pipe(rename('main.min.css'))
+      .pipe(cleanCSS())
       .pipe($.sourcemaps.write('./'))
       .pipe(gulp.dest(config.sassDestDir))
       .pipe(bs.stream());
