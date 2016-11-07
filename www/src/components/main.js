@@ -11,7 +11,6 @@ const main = angular.module('portfolio', [
   require('./mobile-masthead/mobile-masthead').name,
   require('./page-header/page-header').name,
   require('./work/work').name
-]);
-
-main.config(routing)
+])
+    .config(routing)
     .controller('MainCtrl', mainAppController);
