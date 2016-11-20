@@ -19,12 +19,12 @@
   &.ng-hide {
     opacity: 0;
   }
-}
 
-.video-modal__wrapper {
-  padding-bottom: 48.5%;
-  position: relative;
-  width: 80%;
+  &__wrapper {
+    padding-bottom: 48.5%;
+    position: relative;
+    width: 80%;
+  }
 }
 
 #video-modal__player {

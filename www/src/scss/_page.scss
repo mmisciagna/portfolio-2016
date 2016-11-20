@@ -6,58 +6,58 @@
   @media only screen and (max-width: $breakpoint-tablet) {
     @include flexbox(column);
   }
-}
 
-.page__content {
-  padding-bottom: $buffer;
-  @include flex;
-}
-
-.page__header {
-  border-bottom: 1px solid $color-divider;
-}
-
-.page__title {
-  color: $color-accent;
-  font-size: 1.75rem;
-  font-weight: 400;
-  line-height: 1.25em;
-  margin: 0 auto;
-  max-width: $max-width;
-  padding: 1rem $buffer;
-}
-
-.page__body {
-  margin: 0 auto;
-  max-width: $max-width;
-  padding: 0 $buffer $buffer;
-}
-
-.page__sub-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.25em;
-  margin: 1rem 0;
-  padding-bottom: 8px;
-  position: relative;
-  @include flexbox;
-  @include flexbox-items(space-between, center);
-
-  &:after {
-    border-bottom: 3px solid $color-accent;
-    bottom: 0;
-    content: '';
-    left: 0;
-    position: absolute;
-    width: $buffer;
+  &__content {
+    padding-bottom: $buffer;
+    @include flex;
   }
-}
 
-.page__paragraph-header {
-  @extend .page__sub-title;
-  font-size: 1em;
+  &__header {
+    border-bottom: 1px solid $color-divider;
+  }
 
-  &:after {
-    border-bottom-width: 2px;
+  &__title {
+    color: $color-accent;
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.25em;
+    margin: 0 auto;
+    max-width: $max-width;
+    padding: 1rem $buffer;
+  }
+
+  &__body {
+    margin: 0 auto;
+    max-width: $max-width;
+    padding: 0 $buffer $buffer;
+  }
+
+  &__sub-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.25em;
+    margin: 1rem 0;
+    padding-bottom: 8px;
+    position: relative;
+    @include flexbox;
+    @include flexbox-items(space-between, center);
+
+    &:after {
+      border-bottom: 3px solid $color-accent;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      width: $buffer;
+    }
+  }
+
+  &__paragraph-header {
+    @extend .page__sub-title;
+    font-size: 1em;
+
+    &:after {
+      border-bottom-width: 2px;
+    }
   }
 }

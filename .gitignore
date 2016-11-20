@@ -16,8 +16,13 @@ node_modules/
 ehthumbs.db
 Thumbs.db
 
-# Sass #
+# Sass cache and compiled #
 ######################
 **/.sass-cache/
 *.css.*
 *.js.*
+*.map
+*.min.*
+www/js/*
+www/css/*
+www/js/main.min.js.map

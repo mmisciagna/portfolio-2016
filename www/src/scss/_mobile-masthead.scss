@@ -5,65 +5,65 @@
   @media only screen and (max-width: $breakpoint-tablet) {
     display: block;
   }
-}
 
-.mobile-masthead-offset {
-  height: $mobile-masthead-height;
-}
-
-.mobile-masthead__content {
-  background: $color-white-87;
-  height: $mobile-masthead-height;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  @include flexbox(row);
-  @include flexbox-items(space-between, center);
-}
-
-.mobile-masthead__title {
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1em;
-  margin: 0;
-}
-
-.mobile-masthead__logo-link {
-  border-bottom: none;
-  display: block;
-  padding: 0 $buffer;
-}
-
-.mobile-masthead__logo-aria-label {
-  position: absolute;
-  left: -9999px;
-}
-
-.mobile-masthead__logo-mark {
-  display: inline-block;
-  height: 30px;
-  vertical-align: middle;
-}
-
-.mobile-masthead__menu-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: none;
-  height: $mobile-masthead-height;
-  padding: 0 $buffer;
-  @include remove-appearance;
-
-  @media only screen and (max-width: $breakpoint-tablet) {
-    display: block;
+  &-offset {
+    height: $mobile-masthead-height;
   }
-}
 
-.mobile-masthead__menu-icon {
-  fill: $color-primary;
+  &__content {
+    background: $color-white-87;
+    height: $mobile-masthead-height;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    @include flexbox(row);
+    @include flexbox-items(space-between, center);
+  }
 
-  svg {
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1em;
+    margin: 0;
+  }
+
+  &__logo-link {
+    border-bottom: none;
+    display: block;
+    padding: 0 $buffer;
+  }
+
+  &__logo-aria-label {
+    position: absolute;
+    left: -9999px;
+  }
+
+  &__logo-mark {
+    display: inline-block;
+    height: 30px;
     vertical-align: middle;
+  }
+
+  &__menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    height: $mobile-masthead-height;
+    padding: 0 $buffer;
+    @include remove-appearance;
+
+    @media only screen and (max-width: $breakpoint-tablet) {
+      display: block;
+    }
+  }
+
+  &__menu-icon {
+    fill: $color-primary;
+
+    svg {
+      vertical-align: middle;
+    }
   }
 }

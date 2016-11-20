@@ -3,64 +3,64 @@
   @include flexbox(column);
   @include flexbox-items(center, center);
   @include flex;
-}
 
-.intro__content {
-  margin: 0 auto;
-  max-width: $max-width;
-  padding: $buffer * 2 $buffer;
-  width: 100%;
+  &__content {
+    margin: 0 auto;
+    max-width: $max-width;
+    padding: $buffer * 2 $buffer;
+    width: 100%;
 
-  @media only screen and (max-height: $breakpoint-mobile) {
-    @include flexbox(column-reverse);
-  }
-}
-
-.intro__blurb {
-  color: $color-white-87;
-  line-height: 1.5em;
-  margin-bottom: 1em;
-  margin-top: 0;
-
-  span {
-    white-space: nowrap;
+    @media only screen and (max-height: $breakpoint-mobile) {
+      @include flexbox(column-reverse);
+    }
   }
 
-  a {
-    border-bottom: 3px solid $color-accent;
-    padding-bottom: 2px;
+  &__blurb {
+    color: $color-white-87;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+    margin-top: 0;
+
+    span {
+      white-space: nowrap;
+    }
+
+    a {
+      border-bottom: 3px solid $color-accent;
+      padding-bottom: 2px;
+    }
+
+    @media only screen and (max-height: $breakpoint-mobile) {
+      margin-bottom: 0;
+      margin-top: 1em;
+    }
   }
 
-  @media only screen and (max-height: $breakpoint-mobile) {
-    margin-bottom: 0;
-    margin-top: 1em;
-  }
-}
-
-.intro__nav {
-  margin: 0;
-  padding: 0;
-}
-
-.intro__nav-item {
-  border-bottom: 1px solid $color-black-87;
-  min-height: 0;
-  position: relative;
-
-  &:first-child {
-    border-top: 1px solid $color-black-87;
+  &__nav {
+    margin: 0;
+    padding: 0;
   }
 
-  &:before {
-    display: none;
-  }
-}
+  &__nav-item {
+    border-bottom: 1px solid $color-black-87;
+    min-height: 0;
+    position: relative;
 
-.intro__link {
-  border-bottom: none;
-  color: $color-accent;
-  display: block;
-  line-height: $buffer * 2;
-  padding-left: $buffer / 2;
-  @include transition(all .5s ease-out);
+    &:first-child {
+      border-top: 1px solid $color-black-87;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+
+  &__link {
+    border-bottom: none;
+    color: $color-accent;
+    display: block;
+    line-height: $buffer * 2;
+    padding-left: $buffer / 2;
+    @include transition(all .5s ease-out);
+  }
 }

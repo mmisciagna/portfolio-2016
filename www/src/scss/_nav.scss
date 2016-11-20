@@ -19,151 +19,151 @@
     visibility: visible;
     @include multi-transition(visibility .5s ease-out, opacity .5s ease-out);
   }
-}
 
-.nav-offset {
-  height: 100%;
-  max-width: $nav-desktop-width;
-  min-width: $nav-desktop-width;
+  &-offset {
+    height: 100%;
+    max-width: $nav-desktop-width;
+    min-width: $nav-desktop-width;
 
-  @media only screen and (max-width: $breakpoint-tablet) {
-    display: none;
+    @media only screen and (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+
+    @media only screen and (min-width: $breakpoint-lg-desktop) {
+      max-width: $nav-lg-desktop-width;
+      min-width: $nav-lg-desktop-width;
+    }
   }
 
-  @media only screen and (min-width: $breakpoint-lg-desktop) {
-    max-width: $nav-lg-desktop-width;
-    min-width: $nav-lg-desktop-width;
+  &__content {
+    background: $color-white-87;
+    height: $nav-desktop-height;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: $buffer * 2;
+    position: fixed;
+    top: 0;
+    width: $nav-desktop-width;
+    z-index: 1000;
+    @include flexbox(column);
+
+    @media only screen and (max-width: $breakpoint-tablet) {
+      background: $color-white;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      left: auto;
+      max-width: 500px;
+      @include box-shadow(-1px 0 10px #BFBFBF);
+    }
+
+    @media only screen and (min-width: $breakpoint-lg-desktop) {
+      text-align: right;
+      width: $nav-lg-desktop-width;
+    }
   }
-}
 
-.nav__content {
-  background: $color-white-87;
-  height: $nav-desktop-height;
-  left: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding-bottom: $buffer * 2;
-  position: fixed;
-  top: 0;
-  width: $nav-desktop-width;
-  z-index: 1000;
-  @include flexbox(column);
-
-  @media only screen and (max-width: $breakpoint-tablet) {
-    background: $color-white;
-    position: absolute;
-    right: 0;
-    width: 100%;
-    left: auto;
-    max-width: 500px;
-    @include box-shadow(-1px 0 10px #BFBFBF);
-  }
-
-  @media only screen and (min-width: $breakpoint-lg-desktop) {
-    text-align: right;
-    width: $nav-lg-desktop-width;
-  }
-}
-
-.nav__logo {
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1em;
-  margin: 0;
-  padding: 0;
-  position: relative;
-
-  @media only screen and (max-width: $breakpoint-tablet) {
-    display: none;
-  }
-}
-
-.nav__logo-link {
-  border-bottom: none;
-  display: block;
-  padding: 1rem $buffer;
-}
-
-.nav__logo-aria-label {
-  position: absolute;
-  left: -9999px;
-}
-
-.nav__logo-mark {
-  display: inline-block;
-  max-width: 100px;
-  vertical-align: middle;
-}
-
-.nav__menu-header {
-  display: none;
-
-  @media only screen and (max-width: $breakpoint-tablet) {
-    border-bottom: 1px solid $color-divider;
-    display: block;
-    max-height: $mobile-masthead-height;
-    min-height: $mobile-masthead-height;
+  &__logo {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1em;
+    margin: 0;
+    padding: 0;
     position: relative;
+
+    @media only screen and (max-width: $breakpoint-tablet) {
+      display: none;
+    }
   }
-}
 
-.nav__close-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: none;
-  height: $mobile-masthead-height;
-  padding: 0 $buffer;
-  position: absolute;
-  right: 0;
-  top: 0;
-  @include remove-appearance;
-
-  @media only screen and (max-width: $breakpoint-tablet) {
+  &__logo-link {
+    border-bottom: none;
     display: block;
+    padding: 1rem $buffer;
   }
-}
 
-.nav__close-icon {
-  fill: $color-primary;
+  &__logo-aria-label {
+    position: absolute;
+    left: -9999px;
+  }
 
-  svg {
+  &__logo-mark {
+    display: inline-block;
+    max-width: 100px;
     vertical-align: middle;
   }
-}
 
-.nav__item {
-  border-bottom: none;
-  border-left: 3px solid transparent;
-  border-right: 3px solid transparent;
-  display: block;
-  font-size: 14px;
-  line-height: $mobile-masthead-height;
-  padding: 0 $buffer;
-  width: 100%;
-  @include transition(border .3s ease-out);
+  &__menu-header {
+    display: none;
 
-  @media only screen and (max-width: $breakpoint-tablet) {
-    font-size: 1.5rem;
-    line-height: $buffer * 3;
+    @media only screen and (max-width: $breakpoint-tablet) {
+      border-bottom: 1px solid $color-divider;
+      display: block;
+      max-height: $mobile-masthead-height;
+      min-height: $mobile-masthead-height;
+      position: relative;
+    }
   }
 
-  @media only screen and (min-width: $breakpoint-lg-desktop) {
-    font-size: 1rem;
+  &__close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    height: $mobile-masthead-height;
+    padding: 0 $buffer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include remove-appearance;
+
+    @media only screen and (max-width: $breakpoint-tablet) {
+      display: block;
+    }
   }
-}
 
-.nav__item--active {
-  background: $color-divider;
-  border-left-color: transparent;
-  border-right-color: $color-accent;
-  color: $color-accent;
-  pointer-events: none;
+  &__close-icon {
+    fill: $color-primary;
 
-  @media only screen and (max-width: $breakpoint-tablet) {
+    svg {
+      vertical-align: middle;
+    }
+  }
+
+  &__item {
+    border-bottom: none;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    display: block;
+    font-size: 14px;
+    line-height: $mobile-masthead-height;
+    padding: 0 $buffer;
+    width: 100%;
+    @include transition(border .3s ease-out);
+
+    @media only screen and (max-width: $breakpoint-tablet) {
+      font-size: 1.5rem;
+      line-height: $buffer * 3;
+    }
+
+    @media only screen and (min-width: $breakpoint-lg-desktop) {
+      font-size: 1rem;
+    }
+  }
+
+  &__item--active {
     background: $color-divider;
-    border-left-color: $color-accent;
-    border-right-color: transparent;
-    padding-left: $buffer;
+    border-left-color: transparent;
+    border-right-color: $color-accent;
+    color: $color-accent;
+    pointer-events: none;
+
+    @media only screen and (max-width: $breakpoint-tablet) {
+      background: $color-divider;
+      border-left-color: $color-accent;
+      border-right-color: transparent;
+      padding-left: $buffer;
+    }
   }
 }
